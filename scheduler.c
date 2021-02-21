@@ -42,7 +42,7 @@ stats_t *stats() {
 
 // -------------------- list functions from geeksforgeeks -------------
 
-void append(struct node** head_ref, thread_t t)
+void append(struct node** head_ref, thread_t * t)
 {
     /* 1. allocate node */
     struct node* new_node
