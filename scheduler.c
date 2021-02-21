@@ -131,5 +131,5 @@ void pop()
 
   t = head->next;
   head = t;
-  head->prev = NULL;
+
 }
