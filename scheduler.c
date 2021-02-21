@@ -13,6 +13,13 @@ struct node {
     struct node* prev;
 }node;
 
+//global thread variable to hold the running thread
+struct thread_t * running_thread = NULL;
+
+//global head variable to hold ready queue
+struct node *head = NULL;
+
+
 void append(struct node** head_ref, thread_t * t);
 
 void scheduler(enum algorithm algorithm, unsigned int quantum) 
@@ -71,4 +78,17 @@ void append(struct node** head_ref, thread_t * t)
   new_node->prev = last;
 
   return;
+}
+
+void pop(struct node** head_ref)
+{
+  struct node *t;
+  if(*head_ref = NULL)
+  {
+    return;
+  }
+
+  t = *head_ref->next;
+  *head_ref = t;
+  *head_ref->prev = NULL;
 }
