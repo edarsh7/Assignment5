@@ -120,24 +120,24 @@ void append(struct node** head_ref, thread_t * t)
   return;
 }
 
-void pop(struct node * head_ref)
+void pop(struct node** head_ref)
 {
   struct node *t;
 
-  if(head_ref == NULL)
+  if(*head_ref == NULL)
   {
     return;
   }
 
-  if(head_ref->next != NULL)
+  if((*head_ref)->next != NULL)
   {
-    t = head_ref->next;
+    t = (*head_ref)->next;
     if(t != NULL)
     {
       t->prev = NULL;
     }
-    head_ref = NULL;
-    head_ref = t;
+    (*head_ref) = NULL;
+    (*head_ref) = t;
 
   }
 
