@@ -13,6 +13,8 @@ struct node {
     struct node* prev;
 }node;
 
+void append(node** head_ref, thread_t * t);
+
 void scheduler(enum algorithm algorithm, unsigned int quantum) 
 { }
 
