@@ -35,6 +35,8 @@ void sys_exec(thread_t *t)
   append(&head, t);
   append(&thread_list, t);
 
+  printf("head thread tid: %d \n", t->tid);
+
   if(head != NULL)
   {
     sim_dispatch(head->thread);
