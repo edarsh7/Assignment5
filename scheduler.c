@@ -64,10 +64,9 @@ void sys_write(thread_t *t)
 void sys_exit(thread_t *t) 
 { 
   pop(&head);
-  if(head != NULL)
-  {
+  
     sim_dispatch(head->thread);
-  }
+  
 }
 
 void io_complete(thread_t *t) 
@@ -138,7 +137,6 @@ void pop(struct node** head_ref)
     }
     (*head_ref) = NULL;
     (*head_ref) = t;
-
   }
 
 }
