@@ -130,8 +130,7 @@ void pop(struct node** head_ref)
     return;
   }
 
-  if((*head_ref)->next != NULL)
-  {
+  
     t = (*head_ref)->next;
     if(t != NULL)
     {
@@ -139,6 +138,6 @@ void pop(struct node** head_ref)
     }
     (*head_ref) = NULL;
     (*head_ref) = t;
-  }
+  
 
 }
