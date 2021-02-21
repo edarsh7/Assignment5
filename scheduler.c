@@ -18,9 +18,10 @@ struct thread_t * running_thread = NULL;
 
 //global head variable to hold ready queue
 struct node *head = NULL;
-
+struct node *thread_list = NULL;
 
 void append(struct node** head_ref, thread_t * t);
+void pop(struct node* head_ref);
 
 void scheduler(enum algorithm algorithm, unsigned int quantum) 
 { }
@@ -29,7 +30,11 @@ void sim_tick() { }
 
 void sim_ready() { }
 
-void sys_exec(thread_t *t) { }
+void sys_exec(thread_t *t) 
+{ 
+  append(&head, t);
+  append(&thread_list, t);
+}
 
 void sys_read(thread_t *t) { }
 
