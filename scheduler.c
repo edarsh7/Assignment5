@@ -63,7 +63,7 @@ void sys_write(thread_t *t)
 
 void sys_exit(thread_t *t) 
 { 
-  printf(" HELLO OOO exiting thread tid: %d \n", t->tid);
+  printf("exiting thread tid: %d \n", t->tid);
   pop(head);
   if(head != NULL)
   {
@@ -130,7 +130,7 @@ void pop(struct node* head_ref)
     return;
   }
 
-  t = head_ref;
+  t = head_ref->next;
   head_ref = t;
   head_ref->prev = NULL;
 }
