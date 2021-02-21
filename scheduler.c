@@ -21,7 +21,7 @@ struct node *head = NULL;
 struct node *thread_list = NULL;
 
 void append(struct node** head_ref, thread_t * t);
-void pop();
+void pop(struct node * head_ref);
 
 void scheduler(enum algorithm algorithm, unsigned int quantum) 
 { }
@@ -120,24 +120,24 @@ void append(struct node** head_ref, thread_t * t)
   return;
 }
 
-void pop()
+void pop(struct node * head_ref)
 {
   struct node *t;
 
-  if(head == NULL)
+  if(head_ref == NULL)
   {
     return;
   }
 
-  if(head->next != NULL)
+  if(head_ref->next != NULL)
   {
-    t = head->next;
+    t = head_ref->next;
     if(t != NULL)
     {
       t->prev = NULL;
     }
-    head = NULL;
-    head = t;
+    head_ref = NULL;
+    head_ref = t;
 
   }
 
