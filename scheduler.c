@@ -129,7 +129,16 @@ void pop()
     return;
   }
 
-  t = head->next;
-  head = t;
+  if(head->next != NULL)
+  {
+    t = head->next;
+    if(t != NULL)
+    {
+      t->prev = NULL;
+    }
+    head = NULL;
+    head = t;
+
+  }
 
 }
