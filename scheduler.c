@@ -73,6 +73,7 @@ void sys_exit(thread_t *t)
 void io_complete(thread_t *t) 
 { 
   append(&head, t);
+  printf("io complete: %d \n", t->tid);
   if(head != NULL)
   {
     sim_dispatch(head->thread);
