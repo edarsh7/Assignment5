@@ -80,15 +80,15 @@ void append(struct node** head_ref, thread_t * t)
   return;
 }
 
-void pop(struct node** head_ref)
+void pop(struct node* head_ref)
 {
   struct node *t;
-  if(*head_ref = NULL)
+  if(head_ref = NULL)
   {
     return;
   }
 
-  t = *head_ref->next;
-  *head_ref = t;
-  *head_ref->prev = NULL;
+  t = head_ref;
+  head_ref = t;
+  head_ref->prev = NULL;
 }
