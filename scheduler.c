@@ -26,7 +26,15 @@ struct node *thread_list = NULL;
 void append(struct node** head_ref, thread_t * t);
 void pop(struct node** head_ref);
 
-void rr_sysready()
+void rr_sysready();
+
+void rr_sysexec(thread_t *t);
+
+void rr_sys_rd_wr(thread_t *t);
+
+void rr_sysexit(thread_t *t);
+
+void rr_iocomplete(thread_t *t);
 
 void scheduler(enum algorithm algorithm, unsigned int quantum) 
 {
@@ -89,7 +97,7 @@ void io_starting(thread_t *t) { }
 stats_t *stats() { }
 
 
-
+/*= = = = = = = = = = = = = = = = = ROUND ROBIN FUNCTIONS = = = = = = = = = = = = = = = = =*/
 
 void append(struct node** head_ref, thread_t * t)
 {
@@ -190,6 +198,7 @@ void rr_sysexit(thread_t *t)
   }
 }
 
+//IOCOMPLETE implementation for ROUND ROBIN
 void rr_iocomplete(thread_t *t)
 {
   append(&head, t);
@@ -200,4 +209,4 @@ void rr_iocomplete(thread_t *t)
   }
 }
 
-
+/*= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =*/
