@@ -322,6 +322,7 @@ void turnaround(thread_t *td)
 
 void update()
 {
+  printf(" z ");
   struct node *temp_n;
   temp_n = thread_list;
   while(temp_n != NULL)
