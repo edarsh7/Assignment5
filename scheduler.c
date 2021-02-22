@@ -199,7 +199,7 @@ void rr_sysready()
 {
   struct node *temp_n;
   temp_n = thread_list;
-  while(temp_n->thread->tid != NULL)
+  while(temp_n != NULL)
   {
     if(temp_n->thread != running_thread)
     {
