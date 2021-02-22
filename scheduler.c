@@ -38,24 +38,14 @@ void sim_ready()
 {
   if(running_thread != NULL)
   { 
-    struct node *temp;
-    temp = thread_list;
-
-    while(temp->thread->tid != running_thread->tid)
-    {
-      temp = temp->next;
-    }
-
     if(head->quantum_ct == 0)
     {
-      thread_t *temp2 = head->thread;
+      thread_t *temp = head->thread;
       pop(&head);
-      append(&head, temp2);
-      td_node_init(temp2);
+      append(&head, temp);
       sim_dispatch(head->thread);
       running_thread = head->thread;
     }
-    temp->quantum_ct--;
   }
 }
 
@@ -63,7 +53,7 @@ void sys_exec(thread_t *t)
 { 
   append(&head, t);
   append(&thread_list, t);
-  td_node_init(t);
+  //td_node_init(t);
   
 
   if(head != NULL)
@@ -132,7 +122,7 @@ void append(struct node** head_ref, thread_t * t)
         make next of it as NULL*/
   new_node->next = NULL;
   new_node->thread = t;
-
+  new_node->quantum_ct = q_value;
   /* 4. If the Linked List is empty, then make the new
         node as head */
   if (*head_ref == NULL) {
