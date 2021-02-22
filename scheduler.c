@@ -25,6 +25,7 @@ enum algorithm algo_number;
 
 //global thread variable to hold the running thread
 thread_t * running_thread = NULL;
+thread_t * io_thread = NULL;
 
 //global head variable to hold ready queue
 struct node *head = NULL;
@@ -308,6 +309,12 @@ void rr_sys_rd_wr(thread_t *t)
   {
     temp->ready_q = 0;
   }
+  if(io_thread == NULL)
+  {
+    io_thread = t;
+    if(t == temp->thread)
+      temp->io_q = 0;
+  }
 }
 
 //SYSEXIT implementation for ROUND ROBIN
@@ -357,7 +364,9 @@ void rr_iocomplete(thread_t *t)
   {
     temp->ready_q = 0;
   }
+  io_thread = NULL;
 }
+
 
 void rr_iostarting(thread_t *t)
 {
@@ -378,6 +387,7 @@ void rr_iostarting(thread_t *t)
   {
     temp->ready_q = 0;
   }
+  io_thread = t;
 }
 /*= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =*/
 
