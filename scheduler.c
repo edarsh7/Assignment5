@@ -33,7 +33,7 @@ thread_t * io_thread = NULL;
 struct node *head = NULL;
 struct node *thread_list = NULL;
 
-
+void sortedInsert(struct node** head_ref, thread_t *t);
 void append(struct node** head_ref, thread_t * t);
 void pop(struct node** head_ref);
 
@@ -518,7 +518,7 @@ void turnaround(thread_t *td)
   temp->turnaround = temp->completion - temp->arrival + 1;
 }
 
-void sortedInsert(struct Node** head_ref, thread_t *t) 
+void sortedInsert(struct node** head_ref, thread_t *t) 
 { 
     struct node* new_node = (struct node*)malloc(sizeof(struct node));
     new_node->next = NULL;
@@ -528,12 +528,12 @@ void sortedInsert(struct Node** head_ref, thread_t *t)
 
     if (*head_ref == NULL) 
     { 
-      new_node->next = *head_ref; 
-      *head_ref = new_node; 
+      new_node->next = (*head_ref); 
+      (*head_ref) = new_node; 
     } 
     else
     { 
-      temp = *head_ref; 
+      temp = (*head_ref); 
       while (temp->next != NULL && temp->next->thread->priority <= new_node->thread->priority) 
       { 
         temp = temp->next; 
