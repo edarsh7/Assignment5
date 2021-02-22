@@ -23,7 +23,6 @@ thread_t * running_thread = NULL;
 struct node *head = NULL;
 struct node *thread_list = NULL;
 
-void td_node_init(thread_t * t);
 void append(struct node** head_ref, thread_t * t);
 void pop(struct node** head_ref);
 
@@ -38,7 +37,7 @@ void sim_ready()
 {
   if(running_thread != NULL)
   { 
-    if(head->quantum_ct == 0)
+    if(head != NULL && head->quantum_ct == 0)
     {
       thread_t *temp = head->thread;
       pop(&head);
@@ -54,7 +53,6 @@ void sys_exec(thread_t *t)
 { 
   append(&head, t);
   append(&thread_list, t);
-  //td_node_init(t);
   
 
   if(head != NULL)
@@ -168,14 +166,3 @@ void pop(struct node** head_ref)
 
 
 
-void td_node_init(thread_t * t)
-{
-  struct node *temp;
-  temp = thread_list;
-
-  while(temp->thread->tid != t->tid)
-  {
-    temp = temp->next;
-  }
-  temp->quantum_ct = q_value;
-}
