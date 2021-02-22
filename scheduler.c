@@ -14,6 +14,7 @@ typedef struct node {
 }node;
 
 unsigned int q_value;
+enum algorithm algo_number;
 
 //global thread variable to hold the running thread
 thread_t * running_thread = NULL;
@@ -25,79 +26,61 @@ struct node *thread_list = NULL;
 void append(struct node** head_ref, thread_t * t);
 void pop(struct node** head_ref);
 
+void rr_sysready()
+
 void scheduler(enum algorithm algorithm, unsigned int quantum) 
 {
   q_value = quantum;
+  algo_number = algorithm;
 }
 
 void sim_tick() { }
 
 void sim_ready() 
 {
-  if(running_thread != NULL && head != NULL)
-  { 
-    if(head->quantum_ct == 0)
-    {
-      thread_t *temp = head->thread;
-      pop(&head);
-      append(&head, temp);
-      sim_dispatch(head->thread);
-      running_thread = head->thread;
-    }
-    head->quantum_ct--;
+  switch(algo_number){
+    case ROUND_ROBIN:
+      rr_sysready(t);
   }
 }
 
 void sys_exec(thread_t *t) 
-{ 
-  append(&head, t);
-  append(&thread_list, t);
-  
-
-  if(head != NULL)
-  {
-    sim_dispatch(head->thread);
-    running_thread  = head->thread;
+{
+  switch(algo_number){
+    case ROUND_ROBIN:
+      rr_sysexec(t);
   }
 }
 
 void sys_read(thread_t *t) 
 { 
-  pop(&head);
-  if(head != NULL)
-  {
-    sim_dispatch(head->thread);
-    running_thread = head->thread;
+  switch(algo_number){
+    case ROUND_ROBIN:
+      rr_sys_rd_wr(t);
   }
 }
 
 void sys_write(thread_t *t) 
 {
-  pop(&head);
-  if(head != NULL)
-  {
-    sim_dispatch(head->thread);
-    running_thread = head->thread;
+  switch(algo_number){
+    case ROUND_ROBIN:
+      rr_sys_rd_wr(t);
   }
 }
 
 void sys_exit(thread_t *t) 
 { 
-  pop(&head);
-  if(head != NULL)
-  {
-    sim_dispatch(head->thread);
-    running_thread = head->thread;
+  switch(algo_number){
+    case ROUND_ROBIN:
+      rr_sysexit(t);
   }
 }
 
 void io_complete(thread_t *t) 
 { 
-  append(&head, t);
-  if(head != NULL)
-  {
-    sim_dispatch(head->thread);
-    running_thread = head->thread;
+  switch(algo_number){
+    case ROUND_ROBIN:
+      rr_iocomplete(t);
   }
 }
 
@@ -152,8 +135,69 @@ void pop(struct node** head_ref)
   (*head_ref) = NULL;
   (*head_ref) = t;
   
-
 }
 
+
+// SYSREADY implementation for ROUND ROBIN
+void rr_sysready()
+{
+  if(running_thread != NULL && head != NULL)
+  { 
+    if(head->quantum_ct == 0)
+    {
+      thread_t *temp = head->thread;
+      pop(&head);
+      append(&head, temp);
+      sim_dispatch(head->thread);
+      running_thread = head->thread;
+    }
+    head->quantum_ct--;
+  }
+}
+
+// SYSEXEC implementation for ROUND ROBIN
+void rr_sysexec(thread_t *t)
+{
+  append(&head, t);
+  append(&thread_list, t);
+  
+  if(head != NULL)
+  {
+    sim_dispatch(head->thread);
+    running_thread  = head->thread;
+  }
+}
+
+// SYSREAD / SYSWRITE implementation for ROUND ROBIN
+void rr_sys_rd_wr(thread_t *t)
+{
+  pop(&head);
+  if(head != NULL)
+  {
+    sim_dispatch(head->thread);
+    running_thread = head->thread;
+  }
+}
+
+//SYSEXIT implementation for ROUND ROBIN
+void rr_sysexit(thread_t *t)
+{
+  pop(&head);
+  if(head != NULL)
+  {
+    sim_dispatch(head->thread);
+    running_thread = head->thread;
+  }
+}
+
+void rr_iocomplete(thread_t *t)
+{
+  append(&head, t);
+  if(head != NULL)
+  {
+    sim_dispatch(head->thread);
+    running_thread = head->thread;
+  }
+}
 
 
