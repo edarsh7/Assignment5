@@ -378,7 +378,7 @@ void rr_iostarting(thread_t *t)
 
 void np_prio_sysready()
 {
-  
+  printf("priority of head: %d \n", head->thread->priority);
 }
 
 void np_prio_sysexec(thread_t *t)
