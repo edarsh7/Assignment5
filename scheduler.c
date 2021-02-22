@@ -45,7 +45,7 @@ void sim_ready()
     {
       temp = temp->next;
     }
-    printf("current thread q_value: %d", temp->quantum_ct);
+    printf("current thread q_value: %d\n", temp->quantum_ct);
     
     if(temp->quantum_ct == 0)
     {
