@@ -41,7 +41,7 @@ void sim_ready()
     struct node *temp;
     temp = thread_list;
 
-    while(temp->thread->tid != t->tid)
+    while(temp->thread->tid != running_thread->tid)
     {
       temp = temp->next;
     }
