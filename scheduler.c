@@ -172,6 +172,8 @@ void append(struct node** head_ref, thread_t * t)
   new_node->next = NULL;
   new_node->thread = t;
   new_node->quantum_ct = q_value;
+  new_node->waittime = 0;
+  new_node->turnaround = 0;
   /* 4. If the Linked List is empty, then make the new
         node as head */
   if (*head_ref == NULL) {
