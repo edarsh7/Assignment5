@@ -32,6 +32,7 @@ thread_t * io_thread = NULL;
 struct node *head = NULL;
 struct node *thread_list = NULL;
 
+
 void append(struct node** head_ref, thread_t * t);
 void pop(struct node** head_ref);
 
@@ -306,15 +307,11 @@ void rr_sys_rd_wr(thread_t *t)
     sim_dispatch(head->thread);
     running_thread = head->thread;
   }
-  if(running_thread == temp->thread)
-  {
-    temp->ready_q = 0;
-  }
+  
   if(io_thread == NULL)
   {
     io_thread = t;
-    if(t == temp->thread)
-      temp->io_q = 0;
+    temp->io_q = 0;
   }
 }
 
@@ -369,6 +366,7 @@ void rr_iocomplete(thread_t *t)
   io_thread = NULL;
 }
 
+
 void rr_iostarting(thread_t *t)
 {
   struct node *temp;
@@ -389,6 +387,7 @@ void rr_iostarting(thread_t *t)
     temp->ready_q = 0;
   }
   io_thread = t;
+  temp->io_q = 0;
 }
 /*= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =*/
 
