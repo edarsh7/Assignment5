@@ -269,6 +269,7 @@ void rr_sysexec(thread_t *t)
     temp = temp->next;
   }
   temp->arrival = sim_time();
+  temp->waittime = 0;
   temp->ready_q = 1;
   temp->done = 0;
   
@@ -394,5 +395,5 @@ void turnaround(thread_t *td)
     temp = temp->next;
   }
 
-  temp->turnaround = temp->completion - temp->arrival + 1;
+  temp->turnaround = temp->completion - temp->arrival;
 }
