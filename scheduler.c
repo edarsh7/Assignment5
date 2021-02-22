@@ -48,8 +48,9 @@ void sim_ready()
 {
   switch(algo_number){
     case ROUND_ROBIN:
-      rr_sysready(t);
+      rr_sysready();
     default:
+      break;
   }
 }
 
@@ -59,6 +60,7 @@ void sys_exec(thread_t *t)
     case ROUND_ROBIN:
       rr_sysexec(t);
     default:
+      break;
   }
 }
 
@@ -68,6 +70,7 @@ void sys_read(thread_t *t)
     case ROUND_ROBIN:
       rr_sys_rd_wr(t);
     default:
+      break;
   }
 }
 
@@ -77,6 +80,7 @@ void sys_write(thread_t *t)
     case ROUND_ROBIN:
       rr_sys_rd_wr(t);
     default:
+      break;
   }
 }
 
@@ -86,6 +90,7 @@ void sys_exit(thread_t *t)
     case ROUND_ROBIN:
       rr_sysexit(t);
     default:
+      break;
   }
 }
 
@@ -95,6 +100,7 @@ void io_complete(thread_t *t)
     case ROUND_ROBIN:
       rr_iocomplete(t);
     default:
+      break;
   }
 }
 
