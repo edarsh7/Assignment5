@@ -40,7 +40,7 @@ void rr_sys_rd_wr(thread_t *t);
 void rr_sysexit(thread_t *t);
 void rr_iocomplete(thread_t *t);
 void turnaround(thread_t *td);
-void rr_iostarting(thread_t *t)
+void rr_iostarting(thread_t *t);
 
 
 void scheduler(enum algorithm algorithm, unsigned int quantum) 
