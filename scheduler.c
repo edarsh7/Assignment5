@@ -23,7 +23,7 @@ thread_t * running_thread = NULL;
 struct node *head = NULL;
 struct node *thread_list = NULL;
 
-void td_node_init(struct thread_t * t);
+void td_node_init(thread_t * t);
 void append(struct node** head_ref, thread_t * t);
 void pop(struct node** head_ref);
 
