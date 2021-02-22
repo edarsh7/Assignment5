@@ -46,6 +46,7 @@ void sim_ready()
       sim_dispatch(head->thread);
       running_thread = head->thread;
     }
+    head->quantum_ct--;
   }
 }
 
