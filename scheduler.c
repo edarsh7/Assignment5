@@ -174,7 +174,7 @@ void pop(struct node** head_ref)
 
 
 
-void td_node_init(struct thread_t * t)
+void td_node_init(thread_t * t)
 {
   struct node *temp;
   temp = thread_list;
