@@ -112,7 +112,14 @@ void io_complete(thread_t *t)
 }
 
 void io_starting(thread_t *t)
-{ }
+{
+  switch(algo_number){
+    case ROUND_ROBIN:
+      rr_iostarting(t);
+    default:
+      break;
+  }
+}
 
 stats_t *stats()
 { 
@@ -332,6 +339,26 @@ void rr_iocomplete(thread_t *t)
   }
 }
 
+void rr_iostarting(thread_t *t);
+{
+  struct node *temp;
+  temp = thread_list;
+  while(temp->thread->tid != t->tid)
+  {
+    temp = temp->next;
+  }
+  temp->ready_q = 0;
+  temp->io_q = 0;
+  if(head != NULL)
+  {
+    sim_dispatch(head->thread);
+    running_thread = head->thread;
+  }
+  if(running_thread == temp->thread)
+  {
+    temp->ready_q = 0;
+  }
+}
 /*= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =*/
 
 void turnaround(thread_t *td)
