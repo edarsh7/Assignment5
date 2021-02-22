@@ -14,6 +14,9 @@ typedef struct node {
     int arrival;
     int completion;
     int turnaround;
+    int ready_q;
+    int io_q;
+    int waittime;
 }node;
 
 int count=0;
@@ -30,16 +33,12 @@ struct node *thread_list = NULL;
 void append(struct node** head_ref, thread_t * t);
 void pop(struct node** head_ref);
 
+// ROUND ROBIN SET OF FUNCTIONS FOR SWITCH STATEMENT
 void rr_sysready();
-
 void rr_sysexec(thread_t *t);
-
 void rr_sys_rd_wr(thread_t *t);
-
 void rr_sysexit(thread_t *t);
-
 void rr_iocomplete(thread_t *t);
-
 void turnaround(thread_t *td);
 
 
@@ -63,6 +62,7 @@ void sim_ready()
 
 void sys_exec(thread_t *t) 
 {
+  count++;
   switch(algo_number){
     case ROUND_ROBIN:
       rr_sysexec(t);
@@ -111,7 +111,8 @@ void io_complete(thread_t *t)
   }
 }
 
-void io_starting(thread_t *t) { }
+void io_starting(thread_t *t)
+{ }
 
 stats_t *stats()
 { 
@@ -141,7 +142,6 @@ stats_t *stats()
   stats->turnaround_time = x/count;
 
   return stats;
-
 }
 
 
@@ -197,6 +197,21 @@ void pop(struct node** head_ref)
 // SYSREADY implementation for ROUND ROBIN
 void rr_sysready()
 {
+  struct node *temp_n;
+  temp_n = thread_list;
+  while(temp_n->thread->tid != NULL)
+  {
+    if(temp_n->thread != running_thread)
+    {
+      if(temp_n->ready_q = 1)
+        temp_n->waittime++;
+      if(temp_n->io_q = 1)
+        temp_n->waittime++;
+    }
+    temp_n = temp_n->next;
+  }
+
+  
   if(running_thread != NULL && head != NULL)
   { 
     if(head->quantum_ct == 0)
@@ -216,7 +231,6 @@ void rr_sysexec(thread_t *t)
 {
   append(&head, t);
   append(&thread_list, t);
-  count++;
 
   struct node *temp;
   temp = thread_list;
@@ -225,6 +239,8 @@ void rr_sysexec(thread_t *t)
     temp = temp->next;
   }
   temp->arrival = sim_time();
+  temp->ready_q = 1;
+  temp->io_q = 0;
   
   if(head != NULL)
   {
@@ -236,6 +252,15 @@ void rr_sysexec(thread_t *t)
 // SYSREAD / SYSWRITE implementation for ROUND ROBIN
 void rr_sys_rd_wr(thread_t *t)
 {
+  struct node *temp;
+  temp = thread_list;
+  while(temp->thread->tid != t->tid)
+  {
+    temp = temp->next;
+  }
+  temp->ready_q = 0;
+  temp->io_q = 1;
+
   pop(&head);
   if(head != NULL)
   {
@@ -254,6 +279,8 @@ void rr_sysexit(thread_t *t)
     temp = temp->next;
   }
   temp->completion = sim_time();
+  temp->io_q = 0;
+  temp->ready_q = 0;
 
   pop(&head);
   if(head != NULL)
@@ -266,6 +293,15 @@ void rr_sysexit(thread_t *t)
 //IOCOMPLETE implementation for ROUND ROBIN
 void rr_iocomplete(thread_t *t)
 {
+  struct node *temp;
+  temp = thread_list;
+  while(temp->thread->tid != t->tid)
+  {
+    temp = temp->next;
+  }
+  temp->ready_q = 1;
+  temp->io_q = 0;
+
   append(&head, t);
   if(head != NULL)
   {
