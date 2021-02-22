@@ -17,7 +17,7 @@ typedef struct node {
 unsigned int q_value;
 
 //global thread variable to hold the running thread
-struct thread_t * running_thread = NULL;
+thread_t * running_thread = NULL;
 
 //global head variable to hold ready queue
 struct node *head = NULL;
