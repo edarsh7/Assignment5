@@ -17,6 +17,7 @@ typedef struct node {
     int ready_q;
     int io_q;
     int waittime;
+    int done;
 }node;
 
 int count=0;
@@ -216,7 +217,7 @@ void rr_sysready()
   temp_n = thread_list;
   while(temp_n != NULL)
   {
-    if(temp_n->thread != running_thread)
+    if(temp_n->thread != running_thread && temp_n->done == 0)
     {
       printf("time: %d  ", sim_time());
       printf("tid: %d  ", temp_n->thread->tid);
@@ -329,6 +330,7 @@ void rr_sysexit(thread_t *t)
   temp->completion = sim_time();
   temp->io_q = 0;
   temp->ready_q = 0;
+  temp->done = 1;
 
   pop(&head);
   if(head != NULL)
@@ -366,7 +368,6 @@ void rr_iocomplete(thread_t *t)
   }
   io_thread = NULL;
 }
-
 
 void rr_iostarting(thread_t *t)
 {
