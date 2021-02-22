@@ -215,18 +215,14 @@ void rr_sysready()
   {
     if(temp_n->thread != running_thread)
     {
-      printf("tid: %d", temp_n->thread->tid);
       if(temp_n->ready_q == 1)
       {
-        printf("   ready_q: +1   ");
         temp_n->waittime++;
       }
       if(temp_n->io_q == 1)
       {
-        printf("io_q: +1");
         temp_n->waittime++;
       }
-      printf("\n");
     }
     temp_n = temp_n->next;
   }
@@ -236,6 +232,14 @@ void rr_sysready()
   { 
     if(head->quantum_ct == 0)
     {
+      struct node *temp_x;
+      temp_x = thread_list;
+      while(temp_x->thread->tid != head->thread->tid)
+      {
+        temp_x = temp_x->next;
+      }
+      temp_x->ready_q = 1;
+
       thread_t *temp = head->thread;
       pop(&head);
       append(&head, temp);
