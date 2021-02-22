@@ -15,8 +15,7 @@ typedef struct node {
     int completion;
     int turnaround;
     int ready_q;
-    int io_1;
-    int io_2;
+    int io_q;
     int waittime;
     int done;
 }node;
@@ -316,6 +315,7 @@ void rr_sysexit(thread_t *t)
     temp = temp->next;
   }
   temp->completion = sim_time();
+  temp->io_q = 0;
   temp->ready_q = 0;
   temp->done = 1;
 
@@ -341,7 +341,7 @@ void rr_iocomplete(thread_t *t)
     temp = temp->next;
   }
   temp->ready_q = 1;
-
+  temp->io_q = 0;
 
   append(&head, t);
   if(head != NULL)
