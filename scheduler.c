@@ -33,6 +33,7 @@ thread_t * io_thread = NULL;
 struct node *head = NULL;
 struct node *thread_list = NULL;
 
+void printList();
 void sortedInsert(struct node** head_ref, thread_t *t);
 void append(struct node** head_ref, thread_t * t);
 void pop(struct node** head_ref);
@@ -378,8 +379,7 @@ void rr_iostarting(thread_t *t)
 
 void np_prio_sysready()
 {
-  if(head != NULL)
-    printf("priority of head: %d \n", head->thread->priority);
+  printList();
 }
 
 void np_prio_sysexec(thread_t *t)
@@ -572,4 +572,15 @@ void append(struct node** head_ref, thread_t * t)
   last->next = new_node;
 
   return;
+}
+
+void printList()
+{
+  struct node * temp = head;
+  while(temp != NULL)
+  {
+    printf(" %d ", temp->thread->priority);
+    temp=temp->next;
+  }
+  printf("\n");
 }
