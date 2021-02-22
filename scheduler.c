@@ -52,7 +52,7 @@ void sim_ready()
       pop(&head);
       sim_dispatch(head->thread);
     }
-    temp->quantum_ct--
+    temp->quantum_ct--;
   }
 }
 
