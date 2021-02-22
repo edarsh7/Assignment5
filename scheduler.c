@@ -383,9 +383,7 @@ void np_prio_sysready()
 }
 
 void np_prio_sysexec(thread_t *t)
-{
-  count++;
-  
+{  
   append(&thread_list, t);
   sortedInsert(&head, t);
 
