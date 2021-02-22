@@ -340,7 +340,7 @@ void rr_iocomplete(thread_t *t)
   }
 }
 
-void rr_iostarting(thread_t *t);
+void rr_iostarting(thread_t *t)
 {
   struct node *temp;
   temp = thread_list;
