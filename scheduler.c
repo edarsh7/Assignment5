@@ -49,7 +49,7 @@ void sim_ready()
     
     if(temp->quantum_ct == 0)
     {
-      head->quantum_ct = q_value;
+      temp->quantum_ct = q_value;
       pop(&head);
       append(&head, temp->thread);
       sim_dispatch(head->thread);
