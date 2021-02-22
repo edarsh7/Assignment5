@@ -578,7 +578,7 @@ void printList()
 {
   struct node * temp = head;
 
-  printf("list: ")
+  printf("list: ");
   while(temp != NULL)
   {
     printf(" %d ", temp->thread->priority);
