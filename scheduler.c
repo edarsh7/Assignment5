@@ -12,8 +12,7 @@ typedef struct node {
     struct node* next;
     int quantum_ct;
 }node;
-//what
-
+//dno
 unsigned int q_value;
 
 //global thread variable to hold the running thread
