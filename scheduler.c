@@ -131,15 +131,19 @@ stats_t *stats()
 
   temp = thread_list;
   int x = 0;
+  int y = 0;
   while(temp != NULL)
   {
     stats->tstats[temp->thread->tid - 1].tid = temp->thread->tid;
     stats->tstats[temp->thread->tid - 1].turnaround_time = temp->turnaround;
+    stats->tstats[temp->thread->tid - 1].waiting_time = temp->waittime; 
     x = x + temp->turnaround;
+    y = y + temp->waittime;
     temp=temp->next;
   }
   stats->thread_count = count;
   stats->turnaround_time = x/count;
+  stats->waiting_time = y/count;
 
   return stats;
 }
