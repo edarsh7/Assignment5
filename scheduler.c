@@ -45,7 +45,7 @@ void sim_ready()
     {
       temp = temp->next;
     }
-
+    
     if(temp->quantum_ct == 0)
     {
       head->quantum_ct = q_value;
@@ -177,7 +177,7 @@ void pop(struct node** head_ref)
 void td_node_init(struct thread_t * t)
 {
   struct node *temp;
-  temp = td_list;
+  temp = thread_list;
 
   while(temp->thread->tid != thread_list->tid)
   {
