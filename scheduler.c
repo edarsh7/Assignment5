@@ -369,11 +369,6 @@ void np_prio_sysready()
     sim_dispatch(head->thread);
     running_thread = head->thread;
   }
-
-  if(running_thread == temp->thread)
-  {
-    temp->ready_q = 0;
-  }
 }
 
 void np_prio_sysexec(thread_t *t)
