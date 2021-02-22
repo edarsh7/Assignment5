@@ -112,7 +112,7 @@ void io_complete(thread_t *t)
 }
 
 void io_starting(thread_t *t)
-{ }
+{ update();}
 
 stats_t *stats()
 { 
@@ -201,21 +201,7 @@ void pop(struct node** head_ref)
 // SYSREADY implementation for ROUND ROBIN
 void rr_sysready()
 {
-  struct node *temp_n;
-  temp_n = thread_list;
-  while(temp_n != NULL)
-  {
-    if(temp_n->thread != running_thread)
-    {
-      if(temp_n->ready_q == 1)
-        temp_n->waittime++;
-      if(temp_n->io_q == 1)
-        temp_n->waittime++;
-    }
-    temp_n = temp_n->next;
-  }
-
-  
+  update();
   if(running_thread != NULL && head != NULL)
   { 
     if(head->quantum_ct == 0)
@@ -233,6 +219,7 @@ void rr_sysready()
 // SYSEXEC implementation for ROUND ROBIN
 void rr_sysexec(thread_t *t)
 {
+  update();
   append(&head, t);
   append(&thread_list, t);
 
@@ -256,6 +243,7 @@ void rr_sysexec(thread_t *t)
 // SYSREAD / SYSWRITE implementation for ROUND ROBIN
 void rr_sys_rd_wr(thread_t *t)
 {
+  update();
   struct node *temp;
   temp = thread_list;
   while(temp->thread->tid != t->tid)
@@ -276,6 +264,7 @@ void rr_sys_rd_wr(thread_t *t)
 //SYSEXIT implementation for ROUND ROBIN
 void rr_sysexit(thread_t *t)
 {
+  update();s
   struct node *temp;
   temp = thread_list;
   while(temp->thread->tid != t->tid)
@@ -297,6 +286,7 @@ void rr_sysexit(thread_t *t)
 //IOCOMPLETE implementation for ROUND ROBIN
 void rr_iocomplete(thread_t *t)
 {
+  update();
   struct node *temp;
   temp = thread_list;
   while(temp->thread->tid != t->tid)
@@ -327,4 +317,21 @@ void turnaround(thread_t *td)
   }
 
   temp->turnaround = temp->completion - temp->arrival + 1;
+}
+
+void update()
+{
+  struct node *temp_n;
+  temp_n = thread_list;
+  while(temp_n != NULL)
+  {
+    if(temp_n->thread != running_thread)
+    {
+      if(temp_n->ready_q == 1)
+        temp_n->waittime++;
+      if(temp_n->io_q == 1)
+        temp_n->waittime++;
+    }
+    temp_n = temp_n->next;
+  }
 }
