@@ -35,8 +35,7 @@ void scheduler(enum algorithm algorithm, unsigned int quantum)
 void sim_tick() { }
 
 void sim_ready() 
-{ 
-  printf("idk");
+{
   if(running_thread != NULL)
   {
     struct node *temp;
@@ -46,6 +45,7 @@ void sim_ready()
     {
       temp = temp->next;
     }
+    printf("current thread q_value: %d", temp->quantum_ct);
     
     if(temp->quantum_ct == 0)
     {
