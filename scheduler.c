@@ -215,10 +215,18 @@ void rr_sysready()
   {
     if(temp_n->thread != running_thread)
     {
+      printf("tid: %d", temp_n->thread->tid);
       if(temp_n->ready_q == 1)
+      {
+        printf("   ready_q: +1   ");
         temp_n->waittime++;
+      }
       if(temp_n->io_q == 1)
+      {
+        printf("io_q: +1");
         temp_n->waittime++;
+      }
+      printf("\n");
     }
     temp_n = temp_n->next;
   }
@@ -258,7 +266,7 @@ void rr_sysexec(thread_t *t)
   if(head != NULL)
   {
     sim_dispatch(head->thread);
-    running_thread  = head->thread;
+    running_thread = head->thread;
   }
 
   if(running_thread == temp->thread)
