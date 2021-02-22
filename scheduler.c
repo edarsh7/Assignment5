@@ -36,6 +36,7 @@ void sim_tick() { }
 
 void sim_ready() 
 { 
+  printf("idk");
   if(running_thread != NULL)
   {
     struct node *temp;
