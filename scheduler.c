@@ -38,12 +38,20 @@ void sim_ready()
 {
   if(running_thread != NULL)
   { 
+    struct node *temp;
+    temp = thread_list;
+
+    while(temp->thread->tid != t->tid)
+    {
+      temp = temp->next;
+    }
+
     if(head->quantum_ct == 0)
     {
-      thread_t *temp = head->thread;
+      thread_t *temp2 = head->thread;
       pop(&head);
-      append(&head, temp);
-      td_node_init(temp);
+      append(&head, temp2);
+      td_node_init(temp2);
       sim_dispatch(head->thread);
       running_thread = head->thread;
     }
