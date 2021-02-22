@@ -12,7 +12,7 @@ typedef struct node {
     struct node* next;
     int quantum_ct;
 }node;
-//dno
+
 unsigned int q_value;
 
 //global thread variable to hold the running thread
@@ -34,7 +34,7 @@ void sim_tick() { }
 
 void sim_ready() 
 {
-  if(running_thread != NULL)
+  if(running_thread != NULL && head != NULL)
   { 
     if(head != NULL && head->quantum_ct == 0)
     {
