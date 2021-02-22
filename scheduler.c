@@ -577,6 +577,8 @@ void append(struct node** head_ref, thread_t * t)
 void printList()
 {
   struct node * temp = head;
+
+  printf("list: ")
   while(temp != NULL)
   {
     printf(" %d ", temp->thread->priority);
