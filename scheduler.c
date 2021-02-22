@@ -369,7 +369,7 @@ void rr_iostarting(thread_t *t)
   temp->ready_q = 0;
   temp->io_start = sim_time();
 
-  temp->waittime = temp->waittime + (temp->io_start - temp->io_wait);
+  temp->waittime = temp->waittime + (temp->io_start - temp->io_wait - 1);
   temp->io_wait = 0;
   temp->io_start = 0;
 
