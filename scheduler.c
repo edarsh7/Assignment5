@@ -11,8 +11,11 @@ typedef struct node {
     thread_t * thread;
     struct node* next;
     int quantum_ct;
+    int arrival;
+    int completion;
 }node;
 
+int count=0;
 unsigned int q_value;
 enum algorithm algo_number;
 
@@ -106,7 +109,39 @@ void io_complete(thread_t *t)
 
 void io_starting(thread_t *t) { }
 
-stats_t *stats() { }
+stats_t *stats()
+{ 
+  int thread_count = count;
+  stats_t *stats = malloc(sizeof(stats_t));
+  stats->tstats = malloc(sizeof(stats_t) * thread_count);
+
+
+  struct node *temp = thread_list;
+
+  while(temp != NULL)
+  {
+    turnaround(temp->thread);
+    printf("tid: %d  s1: %d  arrival: %d   s2: %d   iodone: %d \n", temp->thread->tid, temp->start1, temp->arrival, temp->start2, temp->io_done);
+    temp = temp->next;
+  }
+
+  temp = thread_list;
+  int x = 0;
+  int y = 0;
+  while(temp != NULL)
+  {
+    stats->tstats[temp->thread->tid - 1].tid = temp->thread->tid;
+    stats->tstats[temp->thread->tid - 1].turnaround_time = temp->turnaround;
+    x = x + temp->turnaround;
+    y = y + temp->wait_time;
+    temp=temp->next;
+  }
+  stats->thread_count = count;
+  stats->turnaround_time = x/count;
+
+  return stats;
+
+}
 
 
 /*= = = = = = = = = = = = = = = = = ROUND ROBIN FUNCTIONS = = = = = = = = = = = = = = = = =*/
@@ -180,6 +215,15 @@ void rr_sysexec(thread_t *t)
 {
   append(&head, t);
   append(&thread_list, t);
+  count++;
+
+  struct node *temp;
+  temp = thread_list;
+  while(temp->thread->tid != t->tid)
+  {
+    temp = temp->next;
+  }
+  temp->arrival = sim_time();
   
   if(head != NULL)
   {
@@ -202,6 +246,14 @@ void rr_sys_rd_wr(thread_t *t)
 //SYSEXIT implementation for ROUND ROBIN
 void rr_sysexit(thread_t *t)
 {
+  struct node *temp;
+  temp = thread_list;
+  while(temp->thread->tid != t->tid)
+  {
+    temp = temp->next;
+  }
+  temp->completion = sim_time();
+
   pop(&head);
   if(head != NULL)
   {
@@ -222,3 +274,16 @@ void rr_iocomplete(thread_t *t)
 }
 
 /*= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =*/
+
+void turnaround(thread_t *td)
+{
+  struct node *temp;
+  temp = thread_list;
+
+  while(temp->thread->tid != td->tid)
+  {
+    temp = temp->next;
+  }
+
+  temp->turnaround = temp->completion - temp->arrival + 1;
+}
