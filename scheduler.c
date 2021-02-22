@@ -13,6 +13,7 @@ typedef struct node {
     int quantum_ct;
     int arrival;
     int completion;
+    int turnaround;
 }node;
 
 int count=0;
@@ -129,13 +130,11 @@ stats_t *stats()
 
   temp = thread_list;
   int x = 0;
-  int y = 0;
   while(temp != NULL)
   {
     stats->tstats[temp->thread->tid - 1].tid = temp->thread->tid;
     stats->tstats[temp->thread->tid - 1].turnaround_time = temp->turnaround;
     x = x + temp->turnaround;
-    y = y + temp->wait_time;
     temp=temp->next;
   }
   stats->thread_count = count;
