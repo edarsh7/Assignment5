@@ -40,6 +40,7 @@ void rr_sys_rd_wr(thread_t *t);
 void rr_sysexit(thread_t *t);
 void rr_iocomplete(thread_t *t);
 void turnaround(thread_t *td);
+void update();
 
 
 void scheduler(enum algorithm algorithm, unsigned int quantum) 
@@ -264,7 +265,7 @@ void rr_sys_rd_wr(thread_t *t)
 //SYSEXIT implementation for ROUND ROBIN
 void rr_sysexit(thread_t *t)
 {
-  update();s
+  update();
   struct node *temp;
   temp = thread_list;
   while(temp->thread->tid != t->tid)
