@@ -11,7 +11,10 @@ struct node {
     thread_t * thread;
     struct node* next;
     struct node* prev;
+    int quantum_ct;
 }node;
+
+unsigned int q_value;
 
 //global thread variable to hold the running thread
 struct thread_t * running_thread = NULL;
@@ -20,26 +23,50 @@ struct thread_t * running_thread = NULL;
 struct node *head = NULL;
 struct node *thread_list = NULL;
 
+void td_node_init(struct thread_t * t);
 void append(struct node** head_ref, thread_t * t);
 void pop(struct node** head_ref);
 
 void scheduler(enum algorithm algorithm, unsigned int quantum) 
-{ }
+{
+  q_value = quantum;
+}
 
 void sim_tick() { }
 
-void sim_ready() { }
+void sim_ready() 
+{ 
+  if(running_thread != NULL)
+  {
+    struct node *temp;
+    temp = thread_list;
+
+    while(temp->thread->tid != running_thread->tid)
+    {
+      temp = temp->next;
+    }
+
+    if(temp->quantum_ct == 0)
+    {
+      &head->quantum_ct = q_value;
+      pop(&head);
+      sim_dispatch(&head->thread);
+    }
+    temp->quantum_ct--
+  }
+}
 
 void sys_exec(thread_t *t) 
 { 
   append(&head, t);
   append(&thread_list, t);
-
-  printf("head thread tid: %d \n", t->tid);
+  td_node_init(t);
+  
 
   if(head != NULL)
   {
     sim_dispatch(head->thread);
+    running_thread  = head->thread;
   }
 }
 
@@ -49,6 +76,7 @@ void sys_read(thread_t *t)
   if(head != NULL)
   {
     sim_dispatch(head->thread);
+    running_thread = head->thread;
   }
 }
 
@@ -58,6 +86,7 @@ void sys_write(thread_t *t)
   if(head != NULL)
   {
     sim_dispatch(head->thread);
+    running_thread = head->thread;
   }
 }
 
@@ -67,16 +96,17 @@ void sys_exit(thread_t *t)
   if(head != NULL)
   {
     sim_dispatch(head->thread);
+    running_thread = head->thread;
   }
 }
 
 void io_complete(thread_t *t) 
 { 
   append(&head, t);
-  printf("io complete: %d \n", t->tid);
   if(head != NULL)
   {
     sim_dispatch(head->thread);
+    running_thread = head->thread;
   }
 }
 
@@ -131,13 +161,27 @@ void pop(struct node** head_ref)
   }
 
   
-    t = (*head_ref)->next;
-    if(t != NULL)
-    {
-      t->prev = NULL;
-    }
-    (*head_ref) = NULL;
-    (*head_ref) = t;
+  t = (*head_ref)->next;
+  if(t != NULL)
+  {
+    t->prev = NULL;
+  }
+  (*head_ref) = NULL;
+  (*head_ref) = t;
   
 
+}
+
+
+
+void td_node_init(struct thread_t * t)
+{
+  struct node *temp;
+  temp = td_list;
+
+  while(temp->thread->tid != td->tid)
+  {
+    temp = temp->next;
+  }
+  temp->quantum_ct = q_value;
 }
