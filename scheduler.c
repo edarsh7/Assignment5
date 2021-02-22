@@ -203,9 +203,9 @@ void rr_sysready()
   {
     if(temp_n->thread != running_thread)
     {
-      if(temp_n->ready_q = 1)
+      if(temp_n->ready_q == 1)
         temp_n->waittime++;
-      if(temp_n->io_q = 1)
+      if(temp_n->io_q == 1)
         temp_n->waittime++;
     }
     temp_n = temp_n->next;
