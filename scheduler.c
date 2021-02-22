@@ -179,7 +179,7 @@ void td_node_init(struct thread_t * t)
   struct node *temp;
   temp = thread_list;
 
-  while(temp->thread->tid != thread_list->tid)
+  while(temp->thread->tid != t->tid)
   {
     temp = temp->next;
   }
