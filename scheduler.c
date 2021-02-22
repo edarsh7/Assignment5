@@ -201,7 +201,6 @@ void pop(struct node** head_ref)
 // SYSREADY implementation for ROUND ROBIN
 void rr_sysready()
 {
-  printf(" z ");
   struct node *temp_n;
   temp_n = thread_list;
   while(temp_n != NULL)
@@ -225,6 +224,7 @@ void rr_sysready()
       pop(&head);
       append(&head, temp);
       sim_dispatch(head->thread);
+      head->ready_q = 0;
       running_thread = head->thread;
     }
     head->quantum_ct--;
@@ -250,6 +250,7 @@ void rr_sysexec(thread_t *t)
   if(head != NULL)
   {
     sim_dispatch(head->thread);
+    head->ready_q = 0;
     running_thread  = head->thread;
   }
 }
@@ -270,6 +271,7 @@ void rr_sys_rd_wr(thread_t *t)
   if(head != NULL)
   {
     sim_dispatch(head->thread);
+    head->ready_q = 0;
     running_thread = head->thread;
   }
 }
@@ -291,6 +293,7 @@ void rr_sysexit(thread_t *t)
   if(head != NULL)
   {
     sim_dispatch(head->thread);
+    head->ready_q = 0;
     running_thread = head->thread;
   }
 }
@@ -311,6 +314,7 @@ void rr_iocomplete(thread_t *t)
   if(head != NULL)
   {
     sim_dispatch(head->thread);
+    head->ready_q = 0;
     running_thread = head->thread;
   }
 }
