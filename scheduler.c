@@ -15,7 +15,8 @@ typedef struct node {
     int completion;
     int turnaround;
     int ready_q;
-    int io_q;
+    int io_wait;
+    int io_start;
     int waittime;
     int done;
 }node;
@@ -249,11 +250,6 @@ void rr_sysready()
         printf("ready_q +1 ");
         temp_n->waittime++;
       }
-      if(temp_n->io_q == 1)
-      {
-        printf("io_q +1 ");
-        temp_n->waittime++;
-      }
     }
     printf("\n");
     temp_n = temp_n->next;
@@ -274,7 +270,6 @@ void rr_sysexec(thread_t *t)
   }
   temp->arrival = sim_time();
   temp->ready_q = 1;
-  temp->io_q = 0;
   temp->done = 0;
   
   if(head != NULL)
@@ -299,7 +294,7 @@ void rr_sys_rd_wr(thread_t *t)
     temp = temp->next;
   }
   temp->ready_q = 0;
-  
+  temp->io_wait = sim_time();
 
   pop(&head);
   if(head != NULL)
@@ -308,11 +303,8 @@ void rr_sys_rd_wr(thread_t *t)
     running_thread = head->thread;
   }
   
-  if(io_thread == NULL)
-  {
-    io_thread = t;
-    temp->io_q = 0;
-  }
+  
+  
 }
 
 //SYSEXIT implementation for ROUND ROBIN
@@ -325,7 +317,6 @@ void rr_sysexit(thread_t *t)
     temp = temp->next;
   }
   temp->completion = sim_time();
-  temp->io_q = 0;
   temp->ready_q = 0;
   temp->done = 1;
 
@@ -351,7 +342,6 @@ void rr_iocomplete(thread_t *t)
     temp = temp->next;
   }
   temp->ready_q = 1;
-  temp->io_q = 0;
 
   append(&head, t);
   if(head != NULL)
@@ -376,7 +366,12 @@ void rr_iostarting(thread_t *t)
     temp = temp->next;
   }
   temp->ready_q = 0;
-  temp->io_q = 0;
+  temp->io_start = sim_time();
+
+  temp->waittime = temp->waittime + (temp->io_start - temp->io_wait);
+  temp->io_wait = 0;
+  temp->io_start = 0;
+
   if(head != NULL)
   {
     sim_dispatch(head->thread);
@@ -386,8 +381,6 @@ void rr_iostarting(thread_t *t)
   {
     temp->ready_q = 0;
   }
-  io_thread = t;
-  temp->io_q = 0;
 }
 /*= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =*/
 
