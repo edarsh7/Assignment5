@@ -250,8 +250,12 @@ void rr_sysexec(thread_t *t)
   if(head != NULL)
   {
     sim_dispatch(head->thread);
-    head->ready_q = 0;
     running_thread  = head->thread;
+  }
+
+  if(running_thread == temp->thread)
+  {
+    temp->ready_q = 0;
   }
 }
 
@@ -271,8 +275,11 @@ void rr_sys_rd_wr(thread_t *t)
   if(head != NULL)
   {
     sim_dispatch(head->thread);
-    head->ready_q = 0;
     running_thread = head->thread;
+  }
+  if(running_thread == temp->thread)
+  {
+    temp->ready_q = 0;
   }
 }
 
@@ -293,8 +300,11 @@ void rr_sysexit(thread_t *t)
   if(head != NULL)
   {
     sim_dispatch(head->thread);
-    head->ready_q = 0;
     running_thread = head->thread;
+  }
+  if(running_thread == temp->thread)
+  {
+    temp->ready_q = 0;
   }
 }
 
@@ -314,8 +324,11 @@ void rr_iocomplete(thread_t *t)
   if(head != NULL)
   {
     sim_dispatch(head->thread);
-    head->ready_q = 0;
     running_thread = head->thread;
+  }
+  if(running_thread == temp->thread)
+  {
+    temp->ready_q = 0;
   }
 }
 
