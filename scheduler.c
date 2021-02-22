@@ -275,6 +275,7 @@ void rr_sysexec(thread_t *t)
   temp->arrival = sim_time();
   temp->ready_q = 1;
   temp->io_q = 0;
+  temp->done = 0;
   
   if(head != NULL)
   {
