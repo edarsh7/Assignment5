@@ -12,6 +12,7 @@ typedef struct node {
     struct node* next;
     int quantum_ct;
 }node;
+//what
 
 unsigned int q_value;
 
