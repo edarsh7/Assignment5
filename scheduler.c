@@ -10,7 +10,6 @@
 typedef struct node {
     thread_t * thread;
     struct node* next;
-    struct node* prev;
     int quantum_ct;
 }node;
 
@@ -125,7 +124,6 @@ void append(struct node** head_ref, thread_t * t)
   /* 4. If the Linked List is empty, then make the new
         node as head */
   if (*head_ref == NULL) {
-      new_node->prev = NULL;
       *head_ref = new_node;
       return;
   }
@@ -136,9 +134,6 @@ void append(struct node** head_ref, thread_t * t)
 
   /* 6. Change the next of last node */
   last->next = new_node;
-
-  /* 7. Make last node as previous of new node */
-  new_node->prev = last;
 
   return;
 }
@@ -154,10 +149,6 @@ void pop(struct node** head_ref)
 
   
   t = (*head_ref)->next;
-  if(t != NULL)
-  {
-    t->prev = NULL;
-  }
   (*head_ref) = NULL;
   (*head_ref) = t;
   
