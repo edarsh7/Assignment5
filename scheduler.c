@@ -7,7 +7,7 @@
 #include "simulator.h"
 #include "scheduler.h"
 
-struct node {
+typedef struct node {
     thread_t * thread;
     struct node* next;
     struct node* prev;
