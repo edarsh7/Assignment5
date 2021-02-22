@@ -186,24 +186,6 @@ stats_t *stats()
 
 /*= = = = = = = = = = = = = = = = = ROUND ROBIN FUNCTIONS = = = = = = = = = = = = = = = = =*/
 
-
-void pop(struct node** head_ref)
-{
-  struct node *t;
-
-  if(*head_ref == NULL)
-  {
-    return;
-  }
-
-  
-  t = (*head_ref)->next;
-  (*head_ref) = NULL;
-  (*head_ref) = t;
-  
-}
-
-
 // SYSREADY implementation for ROUND ROBIN
 void rr_sysready()
 {
@@ -377,9 +359,21 @@ void rr_iostarting(thread_t *t)
 }
 /*= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =*/
 
+
+/*= = = = = = = = = = = = = = = = = NP_PRIO FUNCTIONS = = = = = = = = = = = = = = = = =*/
+
 void np_prio_sysready()
 {
-  printList();
+  if(head != NULL)
+  {
+    sim_dispatch(head->thread);
+    running_thread = head->thread;
+  }
+
+  if(running_thread == temp->thread)
+  {
+    temp->ready_q = 0;
+  }
 }
 
 void np_prio_sysexec(thread_t *t)
@@ -397,18 +391,6 @@ void np_prio_sysexec(thread_t *t)
   temp->waittime = 0;
   temp->ready_q = 1;
   temp->done = 0;
-  
-  if(head != NULL)
-  {
-    sim_dispatch(head->thread);
-    running_thread = head->thread;
-  }
-
-  if(running_thread == temp->thread)
-  {
-    temp->ready_q = 0;
-  }
-  
 }
 
 void np_prio_sys_rd_wr(thread_t *t)
@@ -423,11 +405,6 @@ void np_prio_sys_rd_wr(thread_t *t)
   temp->io_wait = sim_time();
 
   pop(&head);
-  if(head != NULL)
-  {
-    sim_dispatch(head->thread);
-    running_thread = head->thread;
-  }
 }
 
 void np_prio_sysexit(thread_t *t)
@@ -443,11 +420,7 @@ void np_prio_sysexit(thread_t *t)
   temp->done = 1;
 
   pop(&head);
-  if(head != NULL)
-  {
-    sim_dispatch(head->thread);
-    running_thread = head->thread;
-  }
+  
   if(running_thread == temp->thread)
   {
     temp->ready_q = 0;
@@ -465,11 +438,7 @@ void np_prio_iocomplete(thread_t *t)
   temp->ready_q = 1;
 
   sortedInsert(&head, t);
-  if(head != NULL)
-  {
-    sim_dispatch(head->thread);
-    running_thread = head->thread;
-  }
+  
   if(running_thread == temp->thread)
   {
     temp->ready_q = 0;
@@ -492,17 +461,12 @@ void np_prio_iostarting(thread_t *t)
   temp->io_wait = 0;
   temp->io_start = 0;
 
-  if(head != NULL)
-  {
-    sim_dispatch(head->thread);
-    running_thread = head->thread;
-  }
   if(running_thread == temp->thread)
   {
     temp->ready_q = 0;
   }
 }
-
+/*= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =*/
 
 void turnaround(thread_t *td)
 {
@@ -572,6 +536,22 @@ void append(struct node** head_ref, thread_t * t)
   last->next = new_node;
 
   return;
+}
+
+void pop(struct node** head_ref)
+{
+  struct node *t;
+
+  if(*head_ref == NULL)
+  {
+    return;
+  }
+
+  
+  t = (*head_ref)->next;
+  (*head_ref) = NULL;
+  (*head_ref) = t;
+  
 }
 
 void printList()
