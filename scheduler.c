@@ -395,5 +395,5 @@ void turnaround(thread_t *td)
     temp = temp->next;
   }
 
-  temp->turnaround = temp->completion - temp->arrival;
+  temp->turnaround = temp->completion - temp->arrival + 1;
 }
