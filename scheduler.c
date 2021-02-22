@@ -335,7 +335,7 @@ void rr_iocomplete(thread_t *t)
   }
   temp->ready_q = 1;
 
-  sortedInsert(&head, t);
+  append(&head, t);
   if(head != NULL)
   {
     sim_dispatch(head->thread);
@@ -464,7 +464,7 @@ void np_prio_iocomplete(thread_t *t)
   }
   temp->ready_q = 1;
 
-  append(&head, t);
+  sortedInsert(&head, t);
   if(head != NULL)
   {
     sim_dispatch(head->thread);
