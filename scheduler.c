@@ -37,9 +37,7 @@ void sim_tick() { }
 void sim_ready() 
 {
   if(running_thread != NULL)
-  {
-    printf("current thread q_value: %d\n", temp->quantum_ct);
-    
+  { 
     if(head->quantum_ct == 0)
     {
       thread_t *temp = head->thread;
