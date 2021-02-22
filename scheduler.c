@@ -39,6 +39,9 @@ void rr_sysexit(thread_t *t);
 
 void rr_iocomplete(thread_t *t);
 
+void turnaround(thread_t *td);
+
+
 void scheduler(enum algorithm algorithm, unsigned int quantum) 
 {
   q_value = quantum;
@@ -121,7 +124,6 @@ stats_t *stats()
   while(temp != NULL)
   {
     turnaround(temp->thread);
-    printf("tid: %d  s1: %d  arrival: %d   s2: %d   iodone: %d \n", temp->thread->tid, temp->start1, temp->arrival, temp->start2, temp->io_done);
     temp = temp->next;
   }
 
