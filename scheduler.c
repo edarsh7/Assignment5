@@ -36,7 +36,7 @@ void sim_ready()
 {
   if(running_thread != NULL && head != NULL)
   { 
-    if(head != NULL && head->quantum_ct == 0)
+    if(head->quantum_ct == 0)
     {
       thread_t *temp = head->thread;
       pop(&head);
