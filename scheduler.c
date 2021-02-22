@@ -217,6 +217,7 @@ void rr_sysready()
   {
     if(temp_n->thread != running_thread)
     {
+      printf("time: %d  ", sim_time());
       printf("tid: %d  ", temp_n->thread->tid);
       if(temp_n->ready_q == 1)
       {
