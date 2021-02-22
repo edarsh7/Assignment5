@@ -13,10 +13,10 @@ typedef struct node {
     int quantum_ct;
     int arrival;
     int completion;
-    int turnaround = 0;
+    int turnaround;
     int ready_q;
     int io_q;
-    int waittime = 0;
+    int waittime;
 }node;
 
 int count=0;
