@@ -361,6 +361,16 @@ void rr_iostarting(thread_t *t)
 
 void np_prio_sysready()
 {
+
+  struct node *temp;
+  temp = thread_list;
+  while(temp->thread->tid != head->thread->tid)
+  {
+    temp = temp->next;
+  }
+  if(running_thread == NULL)
+    temp->ready_q = 0;
+
   if(running_thread == NULL && head != NULL)
   {
     running_thread = head->thread;
@@ -368,7 +378,6 @@ void np_prio_sysready()
     pop(&head);
   }
 
-  struct node *temp;
   temp = thread_list;
   while(temp != NULL)
   {
@@ -393,6 +402,7 @@ void np_prio_sysexec(thread_t *t)
     temp = temp->next;
   }
   temp->arrival = sim_time();
+  temp->ready_q = 1;
 }
 
 void np_prio_sys_rd_wr(thread_t *t)
