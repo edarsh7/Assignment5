@@ -45,7 +45,6 @@ void rr_sys_rd_wr(thread_t *t);
 void rr_sysexit(thread_t *t);
 void rr_iocomplete(thread_t *t);
 void turnaround(thread_t *td);
-<<<<<<< HEAD
 void rr_iostarting(thread_t *t);
 
 //NON-PREEMPTIVE PRIORITY SET OF FUNCTIONS
@@ -55,9 +54,6 @@ void np_prio_sys_rd_wr(thread_t *t);
 void np_prio_sysexit(thread_t *t);
 void np_prio_iocomplete(thread_t *t);
 void np_prio_iostarting(thread_t *t);
-=======
-void update();
->>>>>>> parent of 1c8fd28... idk
 
 
 void scheduler(enum algorithm algorithm, unsigned int quantum) 
@@ -142,7 +138,6 @@ void io_complete(thread_t *t)
 }
 
 void io_starting(thread_t *t)
-<<<<<<< HEAD
 {
   switch(algo_number){
     case ROUND_ROBIN:
@@ -153,9 +148,6 @@ void io_starting(thread_t *t)
       break;
   }
 }
-=======
-{ update();}
->>>>>>> parent of 1c8fd28... idk
 
 stats_t *stats()
 { 
@@ -196,10 +188,6 @@ stats_t *stats()
 
 void rr_sysready()
 {
-<<<<<<< HEAD
-=======
-  update();
->>>>>>> parent of 1c8fd28... idk
   if(running_thread != NULL && head != NULL)
   { 
     if(head->quantum_ct == 0)
@@ -239,7 +227,6 @@ void rr_sysready()
 
 void rr_sysexec(thread_t *t)
 {
-  update();
   append(&head, t);
   append(&thread_list, t);
 
@@ -268,7 +255,6 @@ void rr_sysexec(thread_t *t)
 
 void rr_sys_rd_wr(thread_t *t)
 {
-  update();
   struct node *temp;
   temp = thread_list;
   while(temp->thread->tid != t->tid)
@@ -288,7 +274,6 @@ void rr_sys_rd_wr(thread_t *t)
 
 void rr_sysexit(thread_t *t)
 {
-  update();
   struct node *temp;
   temp = thread_list;
   while(temp->thread->tid != t->tid)
@@ -313,7 +298,6 @@ void rr_sysexit(thread_t *t)
 
 void rr_iocomplete(thread_t *t)
 {
-  update();
   struct node *temp;
   temp = thread_list;
   while(temp->thread->tid != t->tid)
@@ -479,7 +463,6 @@ void turnaround(thread_t *td)
   temp->turnaround = temp->completion - temp->arrival + 1;
 }
 
-<<<<<<< HEAD
 void sortedInsert(struct node** head_ref, thread_t *t) 
 { 
     struct node* new_node = (struct node*)malloc(sizeof(struct node));
@@ -553,22 +536,3 @@ void pop(struct node** head_ref)
   (*head_ref) = t;
   
 }
-=======
-void update()
-{
-  printf(" z ");
-  struct node *temp_n;
-  temp_n = thread_list;
-  while(temp_n != NULL)
-  {
-    if(temp_n->thread != running_thread)
-    {
-      if(temp_n->ready_q == 1)
-        temp_n->waittime++;
-      if(temp_n->io_q == 1)
-        temp_n->waittime++;
-    }
-    temp_n = temp_n->next;
-  }
-}
->>>>>>> parent of 1c8fd28... idk
