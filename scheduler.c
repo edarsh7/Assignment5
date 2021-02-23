@@ -501,7 +501,7 @@ void prmtv_prio_sysready()
 
   if(head != NULL)
   {
-    if(head->thread->priority > running_thread->priority)
+    if(running_thread != NULL && head->thread->priority > running_thread->priority)
     {
       thread_t *temp = running_thread;
       sortedInsert(&head, temp);
