@@ -21,6 +21,7 @@ typedef struct node {
     int done;
 }node;
 
+//global variables to hold important info
 int count=0;
 unsigned int q_value;
 enum algorithm algo_number;
@@ -33,7 +34,7 @@ thread_t * io_thread = NULL;
 struct node *head = NULL;
 struct node *thread_list = NULL;
 
-
+//borrowed list functions ::: CREDITS GIVEN IN COMMENTS BEFORE IMPLEMENTATION
 void sortedInsert(struct node** head_ref, thread_t *t);
 void append(struct node** head_ref, thread_t * t);
 void pop(struct node** head_ref);
@@ -56,6 +57,14 @@ void np_prio_sysexit(thread_t *t);
 void np_prio_iocomplete(thread_t *t);
 void np_prio_iostarting(thread_t *t);
 
+//PREEMPTIVE PRIORITY SET OF FUNCTIONS
+void prmtv_prio_sysready();
+void prmtv_prio_sysexec(thread_t *t);
+void prmtv_prio_sys_rd_wr(thread_t *t);
+void prmtv_prio_sysexit(thread_t *t);
+void prmtv_prio_iocomplete(thread_t *t);
+void prmtv_prio_iostarting(thread_t *t);
+
 
 void scheduler(enum algorithm algorithm, unsigned int quantum) 
 {
@@ -71,7 +80,7 @@ void sim_ready()
   {
     rr_sysready();
   }
-  else if(algo_number == NON_PREEMPTIVE_PRIORITY)
+  else if(algo_number == NON_PREEMPTIVE_PRIORITY || algo_number == PREEMPTIVE_PRIORITY)
   {
     np_prio_sysready();
   }
@@ -84,7 +93,7 @@ void sys_exec(thread_t *t)
   {
     rr_sysexec(t);
   }
-  else if(algo_number == NON_PREEMPTIVE_PRIORITY)
+  else if(algo_number == NON_PREEMPTIVE_PRIORITY || algo_number == PREEMPTIVE_PRIORITY)
   {
     np_prio_sysexec(t);
   }
@@ -108,7 +117,7 @@ void sys_write(thread_t *t)
   {
     rr_sys_rd_wr(t);
   }
-  else if(algo_number == NON_PREEMPTIVE_PRIORITY)
+  else if(algo_number == NON_PREEMPTIVE_PRIORITY || algo_number == PREEMPTIVE_PRIORITY)
   {
     np_prio_sys_rd_wr(t);
   }
@@ -120,7 +129,7 @@ void sys_exit(thread_t *t)
   {
     rr_sysexit(t);
   }
-  else if(algo_number == NON_PREEMPTIVE_PRIORITY)
+  else if(algo_number == NON_PREEMPTIVE_PRIORITY || algo_number == PREEMPTIVE_PRIORITY)
   {
     np_prio_sysexit(t);
   }
@@ -132,7 +141,7 @@ void io_complete(thread_t *t)
   {
     rr_iocomplete(t);
   }
-  else if(algo_number == NON_PREEMPTIVE_PRIORITY)
+  else if(algo_number == NON_PREEMPTIVE_PRIORITY || algo_number == PREEMPTIVE_PRIORITY)
   {
     np_prio_iocomplete(t);
   }
@@ -144,7 +153,7 @@ void io_starting(thread_t *t)
   {
     rr_iostarting(t);
   }
-  else if(algo_number == NON_PREEMPTIVE_PRIORITY)
+  else if(algo_number == NON_PREEMPTIVE_PRIORITY  || algo_number == PREEMPTIVE_PRIORITY)
   {
     np_prio_iostarting(t);
   }
@@ -362,7 +371,8 @@ void np_prio_sysready()
   {
     running_thread = head->thread;
     sim_dispatch(running_thread);
-    pop(&head);
+    if(algo_number == NON_PREEMPTIVE_PRIORITY)
+      pop(&head);
     
     temp = thread_list;
     while(temp->thread != running_thread)
@@ -455,6 +465,16 @@ void np_prio_iostarting(thread_t *t)
 
 /*= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =*/
 
+/*= = = = = = = = = = = = = = = = = NP_PRIO FUNCTIONS = = = = = = = = = = = = = = = = =*/
+void prmtv_prio_sysready(){}
+void prmtv_prio_sysexec(thread_t *t){}
+void prmtv_prio_sys_rd_wr(thread_t *t){}
+void prmtv_prio_sysexit(thread_t *t){}
+void prmtv_prio_iocomplete(thread_t *t){}
+void prmtv_prio_iostarting(thread_t *t){}
+
+
+/*= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =*/
 
 void turnaround(thread_t *td)
 {
@@ -469,6 +489,8 @@ void turnaround(thread_t *td)
   temp->turnaround = temp->completion - temp->arrival + 1;
 }
 
+//borrowed from https://www.geeksforgeeks.org/given-a-linked-list-which-is-sorted-how-will-you-insert-in-sorted-way/
+//then altered for use in this assignment
 void sortedInsert(struct node** head_ref, thread_t *t) 
 { 
     struct node* new_node = (struct node*)malloc(sizeof(struct node));
@@ -494,6 +516,8 @@ void sortedInsert(struct node** head_ref, thread_t *t)
     } 
 } 
 
+//borrowed from https://www.geeksforgeeks.org/linked-list-set-2-inserting-a-node/ 
+//then altered for use in this assignment 
 void append(struct node** head_ref, thread_t * t)
 {
   /* 1. allocate node */
@@ -527,7 +551,7 @@ void append(struct node** head_ref, thread_t * t)
   return;
 }
 
-
+//borrowed from https://www.geeksforgeeks.org/implement-a-stack-using-singly-linked-list/
 void pop(struct node** head_ref)
 {
   struct node *t;
@@ -543,3 +567,6 @@ void pop(struct node** head_ref)
   (*head_ref) = t;
   
 }
+
+
+
