@@ -2,69 +2,4619 @@
 +-----+----------+--------+-----------+----------+----------+
 | tid | priority | arrive | cpu burst | io start | io burst |
 +-----+----------+--------+-----------+----------+----------+
-|   1 |        4 |      3 |        12 |        8 |        5 |
+|   1 |        0 |      0 |         7 |        1 |        7 |
 +-----+----------+--------+-----------+----------+----------+
-|   2 |        2 |      9 |         9 |        0 |        0 |
-+-----+----------+--------+-----------+----------+----------+
-
-Non-Preemptive Shortest Job First
-
-
-FAIL - No Stats Returned!
-
-
-+-----+----------+--------+-----------+----------+----------+
-| tid | priority | arrive | cpu burst | io start | io burst |
-+-----+----------+--------+-----------+----------+----------+
-|   2 |        0 |      3 |         5 |        0 |        0 |
-+-----+----------+--------+-----------+----------+----------+
-|   1 |        0 |      7 |         5 |        0 |        0 |
+|   2 |        3 |      2 |         5 |        4 |        7 |
 +-----+----------+--------+-----------+----------+----------+
 
-Non-Preemptive Shortest Job First
+Preemptive Shortest Remaining Time First
+ 15   1 ERROR - thread did not exit
+ 15   2 ERROR - thread did not exit
 
+ERROR - Mean Turnaround & Waiting Times - Expected 14/1 got 0/0
+ERROR - 2 threads have invalid turnaround and/or waiting times
 
-FAIL - No Stats Returned!
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
 
 
 +-----+----------+--------+-----------+----------+----------+
 | tid | priority | arrive | cpu burst | io start | io burst |
 +-----+----------+--------+-----------+----------+----------+
-|   2 |        0 |      0 |        11 |        3 |        8 |
+|   1 |        2 |      5 |         7 |        4 |        9 |
 +-----+----------+--------+-----------+----------+----------+
-|   1 |        3 |      2 |        14 |        0 |        0 |
-+-----+----------+--------+-----------+----------+----------+
-
-Non-Preemptive Shortest Job First
-
-
-FAIL - No Stats Returned!
-
-
-+-----+----------+--------+-----------+----------+----------+
-| tid | priority | arrive | cpu burst | io start | io burst |
-+-----+----------+--------+-----------+----------+----------+
-|   1 |        1 |      2 |        13 |       11 |        4 |
-+-----+----------+--------+-----------+----------+----------+
-|   2 |        4 |      5 |        16 |        0 |        0 |
+|   2 |        0 |      8 |         5 |        0 |        0 |
 +-----+----------+--------+-----------+----------+----------+
 
-Non-Preemptive Shortest Job First
+Preemptive Shortest Remaining Time First
+ 20   1 ERROR - thread did not exit
+ 20   2 ERROR - thread did not exit
 
+ERROR - Mean Turnaround & Waiting Times - Expected 11/0 got 0/0
+ERROR - 2 threads have invalid turnaround and/or waiting times
 
-FAIL - No Stats Returned!
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
 
 
 +-----+----------+--------+-----------+----------+----------+
 | tid | priority | arrive | cpu burst | io start | io burst |
 +-----+----------+--------+-----------+----------+----------+
-|   1 |        4 |      5 |         7 |        0 |        0 |
+|   2 |        0 |      0 |        17 |       12 |        8 |
 +-----+----------+--------+-----------+----------+----------+
-|   2 |        0 |      5 |         5 |        0 |        0 |
+|   1 |        2 |      7 |        16 |       10 |        6 |
 +-----+----------+--------+-----------+----------+----------+
 
-Non-Preemptive Shortest Job First
+Preemptive Shortest Remaining Time First
+ 38   2 ERROR - thread did not exit
+ 38   1 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 28/5 got 0/0
+ERROR - 2 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
 
 
-FAIL - No Stats Returned!
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      0 |        10 |        5 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      4 |        13 |       11 |        8 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 30   1 ERROR - thread did not exit
+ 30   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 22/3 got 0/0
+ERROR - 2 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      2 |        11 |        9 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      7 |        11 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 23   2 ERROR - thread did not exit
+ 23   1 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 15/3 got 0/0
+ERROR - 2 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        1 |      0 |        13 |        4 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        4 |      9 |         6 |        5 |        3 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 21   2 ERROR - thread did not exit
+ 21   1 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 15/3 got 0/0
+ERROR - 2 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      2 |        13 |        2 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      2 |         7 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 23   1 ERROR - thread did not exit
+ 23   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 14/3 got 0/0
+ERROR - 2 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      2 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        1 |      8 |        13 |        3 |        1 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 33   1 ERROR - thread did not exit
+ 33   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 22/6 got 0/0
+ERROR - 2 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        2 |      5 |         8 |        7 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      9 |        19 |        5 |        9 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 40   2 ERROR - thread did not exit
+ 40   1 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 20/2 got 0/0
+ERROR - 2 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        1 |      3 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      8 |        15 |       11 |        1 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 23   2 ERROR - thread did not exit
+ 23   1 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 10/0 got 0/0
+ERROR - 2 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        0 |      0 |        10 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      4 |        14 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 23   1 ERROR - thread did not exit
+ 23   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 15/3 got 0/0
+ERROR - 2 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      7 |         5 |        4 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      8 |        15 |        7 |        7 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 33   1 ERROR - thread did not exit
+ 33   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 17/2 got 0/0
+ERROR - 2 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      2 |        13 |        5 |        6 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      5 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 25   2 ERROR - thread did not exit
+ 25   1 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 14/2 got 0/0
+ERROR - 2 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      0 |        15 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      5 |        17 |       16 |        7 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 38   1 ERROR - thread did not exit
+ 38   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 24/5 got 0/0
+ERROR - 2 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      1 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      6 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 37   1 ERROR - thread did not exit
+ 37   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 25/6 got 0/0
+ERROR - 2 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      0 |         6 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        2 |      5 |         8 |        4 |        8 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 21   1 ERROR - thread did not exit
+ 21   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 11/0 got 0/0
+ERROR - 2 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        4 |      7 |        15 |        8 |        6 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      9 |        14 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 35   1 ERROR - thread did not exit
+ 35   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 24/6 got 0/0
+ERROR - 2 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      0 |         9 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      5 |        12 |        8 |        1 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 21   1 ERROR - thread did not exit
+ 21   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 13/2 got 0/0
+ERROR - 2 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        2 |      0 |         6 |        2 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        1 |      9 |        13 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 22   2 ERROR - thread did not exit
+ 22   1 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 12/0 got 0/0
+ERROR - 2 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        4 |      7 |        12 |        3 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      9 |         9 |        7 |        4 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 37   1 ERROR - thread did not exit
+ 37   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 22/5 got 0/0
+ERROR - 2 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      2 |        16 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      3 |        13 |        1 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        4 |      9 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 49   1 ERROR - thread did not exit
+ 49   2 ERROR - thread did not exit
+ 49   3 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 28/11 got 0/0
+ERROR - 3 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      2 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        1 |      2 |        16 |        5 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      3 |        10 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 46   1 ERROR - thread did not exit
+ 46   3 ERROR - thread did not exit
+ 46   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 28/12 got 0/0
+ERROR - 3 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      2 |        17 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        0 |      4 |        10 |        8 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        0 |      9 |         7 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 35   2 ERROR - thread did not exit
+ 35   1 ERROR - thread did not exit
+ 35   3 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 19/7 got 0/0
+ERROR - 3 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        4 |      3 |        13 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      5 |        17 |       13 |        5 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        0 |      6 |         7 |        4 |        8 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 44   3 ERROR - thread did not exit
+ 44   1 ERROR - thread did not exit
+ 44   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 24/8 got 0/0
+ERROR - 3 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      2 |        11 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        1 |      2 |         6 |        1 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        2 |      3 |        12 |        1 |        7 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 37   1 ERROR - thread did not exit
+ 37   3 ERROR - thread did not exit
+ 37   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 20/7 got 0/0
+ERROR - 3 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        4 |      5 |         9 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        3 |      8 |        13 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        1 |      9 |         6 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 32   1 ERROR - thread did not exit
+ 32   3 ERROR - thread did not exit
+ 32   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 15/5 got 0/0
+ERROR - 3 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        2 |      5 |        10 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        0 |      6 |        15 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        0 |      7 |        10 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 39   2 ERROR - thread did not exit
+ 39   1 ERROR - thread did not exit
+ 39   3 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 20/9 got 0/0
+ERROR - 3 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        1 |      0 |        14 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      4 |        15 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        4 |      5 |        13 |        4 |        5 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 41   2 ERROR - thread did not exit
+ 41   3 ERROR - thread did not exit
+ 41   1 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 26/10 got 0/0
+ERROR - 3 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      4 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        0 |      5 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      5 |        14 |        1 |        3 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 54   1 ERROR - thread did not exit
+ 54   2 ERROR - thread did not exit
+ 54   3 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 33/15 got 0/0
+ERROR - 3 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      0 |        15 |        9 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      1 |         6 |        1 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        1 |      8 |        17 |        4 |        3 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 40   1 ERROR - thread did not exit
+ 40   2 ERROR - thread did not exit
+ 40   3 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 21/6 got 0/0
+ERROR - 3 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        4 |      9 |        10 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      9 |        16 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        4 |      9 |        14 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 48   1 ERROR - thread did not exit
+ 48   2 ERROR - thread did not exit
+ 48   3 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 24/11 got 0/0
+ERROR - 3 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        0 |      0 |        16 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        3 |      1 |        12 |       10 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      4 |         9 |        3 |        9 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 36   1 ERROR - thread did not exit
+ 36   3 ERROR - thread did not exit
+ 36   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 26/9 got 0/0
+ERROR - 3 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      1 |        15 |        6 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        2 |      2 |         9 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      7 |         6 |        5 |        2 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 31   3 ERROR - thread did not exit
+ 31   2 ERROR - thread did not exit
+ 31   1 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 17/6 got 0/0
+ERROR - 3 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        1 |      4 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      6 |        13 |        4 |        5 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        1 |      8 |         7 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 41   1 ERROR - thread did not exit
+ 41   2 ERROR - thread did not exit
+ 41   3 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 23/9 got 0/0
+ERROR - 3 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        0 |      5 |         8 |        3 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      6 |        14 |        3 |        5 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        0 |      8 |         7 |        6 |        6 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 40   1 ERROR - thread did not exit
+ 40   2 ERROR - thread did not exit
+ 40   3 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 20/7 got 0/0
+ERROR - 3 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        1 |      1 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        0 |      6 |         9 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        4 |      6 |        13 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 27   1 ERROR - thread did not exit
+ 27   2 ERROR - thread did not exit
+ 27   3 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 12/3 got 0/0
+ERROR - 3 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        0 |      7 |        12 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        2 |      9 |        10 |        8 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        1 |      9 |        13 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 41   1 ERROR - thread did not exit
+ 41   2 ERROR - thread did not exit
+ 41   3 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 24/10 got 0/0
+ERROR - 3 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      3 |        19 |        7 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        4 |      7 |         9 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        4 |      9 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 49   2 ERROR - thread did not exit
+ 49   1 ERROR - thread did not exit
+ 49   3 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 26/10 got 0/0
+ERROR - 3 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      1 |        12 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        1 |      6 |        10 |        6 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      8 |        11 |        7 |        7 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 40   2 ERROR - thread did not exit
+ 40   3 ERROR - thread did not exit
+ 40   1 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 21/7 got 0/0
+ERROR - 3 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      0 |        11 |        3 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      1 |        12 |        9 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      3 |         5 |        2 |        8 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 35   3 ERROR - thread did not exit
+ 35   1 ERROR - thread did not exit
+ 35   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 20/5 got 0/0
+ERROR - 3 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        1 |      4 |         5 |        4 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        2 |      5 |         8 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        4 |      8 |        11 |        4 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        4 |      8 |         9 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 44   3 ERROR - thread did not exit
+ 44   2 ERROR - thread did not exit
+ 44   1 ERROR - thread did not exit
+ 44   4 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 18/7 got 0/0
+ERROR - 4 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      1 |        13 |        2 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        3 |      1 |        10 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        4 |      1 |         6 |        4 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      4 |         6 |        2 |        4 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 42   1 ERROR - thread did not exit
+ 42   3 ERROR - thread did not exit
+ 42   4 ERROR - thread did not exit
+ 42   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 21/9 got 0/0
+ERROR - 4 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      1 |        16 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        3 |      2 |         9 |        1 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        0 |      7 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        1 |      8 |        10 |        2 |        5 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 53   1 ERROR - thread did not exit
+ 53   4 ERROR - thread did not exit
+ 53   3 ERROR - thread did not exit
+ 53   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 27/13 got 0/0
+ERROR - 4 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      2 |         9 |        2 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        0 |      4 |         9 |        4 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        2 |      5 |        15 |       10 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        1 |      6 |         9 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 46   3 ERROR - thread did not exit
+ 46   2 ERROR - thread did not exit
+ 46   4 ERROR - thread did not exit
+ 46   1 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 23/9 got 0/0
+ERROR - 4 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      3 |        15 |        9 |        6 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        1 |      5 |        12 |        8 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        0 |      7 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        4 |      8 |         9 |        8 |        7 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 57   2 ERROR - thread did not exit
+ 57   1 ERROR - thread did not exit
+ 57   4 ERROR - thread did not exit
+ 57   3 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 33/14 got 0/0
+ERROR - 4 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        2 |      1 |        17 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        4 |      1 |         6 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        1 |      4 |        12 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        1 |      7 |        12 |        1 |        1 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 47   2 ERROR - thread did not exit
+ 47   3 ERROR - thread did not exit
+ 47   4 ERROR - thread did not exit
+ 47   1 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 23/11 got 0/0
+ERROR - 4 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        1 |      1 |        17 |       16 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      1 |        10 |        8 |        5 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      2 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        3 |      4 |        17 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 63   2 ERROR - thread did not exit
+ 63   3 ERROR - thread did not exit
+ 63   1 ERROR - thread did not exit
+ 63   4 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 38/19 got 0/0
+ERROR - 4 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        4 |      2 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        0 |      5 |         7 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        1 |      6 |        14 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      7 |        14 |       11 |        8 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 55   3 ERROR - thread did not exit
+ 55   2 ERROR - thread did not exit
+ 55   4 ERROR - thread did not exit
+ 55   1 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 30/15 got 0/0
+ERROR - 4 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      0 |         5 |        3 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        2 |      2 |         5 |        2 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        4 |      3 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        1 |      3 |         9 |        6 |        1 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 36   2 ERROR - thread did not exit
+ 36   4 ERROR - thread did not exit
+ 36   1 ERROR - thread did not exit
+ 36   3 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 19/7 got 0/0
+ERROR - 4 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      2 |        13 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        0 |      8 |        11 |       10 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        1 |      9 |        13 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        4 |      9 |         6 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 44   1 ERROR - thread did not exit
+ 44   2 ERROR - thread did not exit
+ 44   3 ERROR - thread did not exit
+ 44   4 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 22/10 got 0/0
+ERROR - 4 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      0 |         6 |        3 |        5 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      2 |        15 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        4 |      3 |        13 |       10 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        0 |      7 |         8 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 41   2 ERROR - thread did not exit
+ 41   1 ERROR - thread did not exit
+ 41   4 ERROR - thread did not exit
+ 41   3 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 22/9 got 0/0
+ERROR - 4 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        3 |      0 |        12 |        8 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        2 |      2 |        11 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        4 |      4 |        14 |        5 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        2 |      7 |         6 |        3 |        4 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 46   3 ERROR - thread did not exit
+ 46   2 ERROR - thread did not exit
+ 46   1 ERROR - thread did not exit
+ 46   4 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 26/11 got 0/0
+ERROR - 4 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      3 |         8 |        7 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      5 |        10 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        0 |      5 |         6 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        2 |      5 |        10 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 36   1 ERROR - thread did not exit
+ 36   2 ERROR - thread did not exit
+ 36   3 ERROR - thread did not exit
+ 36   4 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 19/10 got 0/0
+ERROR - 4 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        0 |      3 |        10 |        6 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      5 |        13 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        2 |      6 |         6 |        5 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      8 |        19 |       15 |        4 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 54   4 ERROR - thread did not exit
+ 54   3 ERROR - thread did not exit
+ 54   2 ERROR - thread did not exit
+ 54   1 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 28/12 got 0/0
+ERROR - 4 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      0 |        17 |        4 |        6 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        4 |      2 |         7 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        4 |      2 |        16 |       12 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        0 |      3 |        12 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 51   1 ERROR - thread did not exit
+ 51   3 ERROR - thread did not exit
+ 51   4 ERROR - thread did not exit
+ 51   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 29/14 got 0/0
+ERROR - 4 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        4 |      3 |        16 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        4 |      4 |         9 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      6 |         8 |        4 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      7 |         5 |        2 |        9 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 40   1 ERROR - thread did not exit
+ 40   4 ERROR - thread did not exit
+ 40   3 ERROR - thread did not exit
+ 40   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 23/9 got 0/0
+ERROR - 4 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        1 |      0 |        13 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      8 |        17 |        3 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      8 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        1 |      8 |        13 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 60   4 ERROR - thread did not exit
+ 60   1 ERROR - thread did not exit
+ 60   2 ERROR - thread did not exit
+ 60   3 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 30/13 got 0/0
+ERROR - 4 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        0 |      1 |         9 |        1 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        4 |      5 |        17 |       10 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        1 |      5 |        11 |        6 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        1 |      5 |         9 |        8 |        2 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 50   2 ERROR - thread did not exit
+ 50   1 ERROR - thread did not exit
+ 50   3 ERROR - thread did not exit
+ 50   4 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 28/12 got 0/0
+ERROR - 4 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        2 |      3 |        15 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        1 |      6 |        10 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        0 |      7 |        12 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        4 |      8 |        14 |        8 |        7 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 60   2 ERROR - thread did not exit
+ 60   4 ERROR - thread did not exit
+ 60   3 ERROR - thread did not exit
+ 60   1 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 30/15 got 0/0
+ERROR - 4 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      2 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        0 |      3 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        4 |      6 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      7 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 34   3 ERROR - thread did not exit
+ 34   2 ERROR - thread did not exit
+ 34   4 ERROR - thread did not exit
+ 34   1 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 13/5 got 0/0
+ERROR - 4 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      1 |        17 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        3 |      3 |         8 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        1 |      5 |         6 |        1 |        5 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      8 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      9 |         9 |        2 |        8 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 58   3 ERROR - thread did not exit
+ 58   4 ERROR - thread did not exit
+ 58   5 ERROR - thread did not exit
+ 58   1 ERROR - thread did not exit
+ 58   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 27/13 got 0/0
+ERROR - 5 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        3 |      3 |        14 |        5 |        5 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        2 |      5 |        11 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        1 |      6 |         8 |        2 |        5 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        3 |      6 |        14 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        1 |      8 |        10 |        7 |        6 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 59   3 ERROR - thread did not exit
+ 59   4 ERROR - thread did not exit
+ 59   2 ERROR - thread did not exit
+ 59   5 ERROR - thread did not exit
+ 59   1 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 33/18 got 0/0
+ERROR - 5 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        0 |      2 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        0 |      5 |        14 |       12 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      6 |         9 |        4 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        3 |      6 |         9 |        2 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        1 |      8 |        15 |        1 |        3 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 67   3 ERROR - thread did not exit
+ 67   2 ERROR - thread did not exit
+ 67   1 ERROR - thread did not exit
+ 67   4 ERROR - thread did not exit
+ 67   5 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 38/20 got 0/0
+ERROR - 5 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      0 |        16 |       11 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        3 |      3 |        16 |       14 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      7 |        18 |        2 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        3 |      7 |        10 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      8 |        13 |        6 |        1 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 79   1 ERROR - thread did not exit
+ 79   4 ERROR - thread did not exit
+ 79   3 ERROR - thread did not exit
+ 79   5 ERROR - thread did not exit
+ 79   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 41/23 got 0/0
+ERROR - 5 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        2 |      0 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        4 |      0 |        12 |        2 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      3 |        17 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        1 |      6 |        12 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        3 |      9 |         6 |        3 |        9 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 65   2 ERROR - thread did not exit
+ 65   5 ERROR - thread did not exit
+ 65   1 ERROR - thread did not exit
+ 65   4 ERROR - thread did not exit
+ 65   3 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 35/18 got 0/0
+ERROR - 5 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      0 |        11 |        3 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        3 |      1 |         5 |        2 |        5 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      2 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        1 |      5 |         9 |        2 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        3 |      7 |        12 |        3 |        4 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 54   1 ERROR - thread did not exit
+ 54   5 ERROR - thread did not exit
+ 54   3 ERROR - thread did not exit
+ 54   2 ERROR - thread did not exit
+ 54   4 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 29/15 got 0/0
+ERROR - 5 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      1 |         6 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        4 |      1 |         8 |        4 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        1 |      3 |         7 |        3 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        4 |      3 |         8 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        0 |      6 |        17 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 46   2 ERROR - thread did not exit
+ 46   3 ERROR - thread did not exit
+ 46   4 ERROR - thread did not exit
+ 46   5 ERROR - thread did not exit
+ 46   1 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 23/12 got 0/0
+ERROR - 5 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        1 |      0 |        17 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        0 |      0 |         6 |        5 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        1 |      4 |        15 |       14 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        1 |      7 |        12 |        8 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        2 |      8 |        11 |        6 |        1 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 60   1 ERROR - thread did not exit
+ 60   5 ERROR - thread did not exit
+ 60   3 ERROR - thread did not exit
+ 60   4 ERROR - thread did not exit
+ 60   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 31/16 got 0/0
+ERROR - 5 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        0 |      3 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      5 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        1 |      7 |         6 |        1 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        0 |      8 |        10 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        3 |      8 |         9 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 63   1 ERROR - thread did not exit
+ 63   3 ERROR - thread did not exit
+ 63   2 ERROR - thread did not exit
+ 63   4 ERROR - thread did not exit
+ 63   5 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 30/16 got 0/0
+ERROR - 5 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      2 |         9 |        6 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        3 |      5 |        19 |       12 |        6 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      8 |        15 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        1 |      8 |        12 |       11 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        0 |      9 |         5 |        2 |        4 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 67   1 ERROR - thread did not exit
+ 67   4 ERROR - thread did not exit
+ 67   3 ERROR - thread did not exit
+ 67   5 ERROR - thread did not exit
+ 67   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 28/13 got 0/0
+ERROR - 5 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        2 |      4 |        13 |        5 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        0 |      6 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        1 |      8 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        4 |      9 |         9 |        5 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      9 |        15 |        5 |        3 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 63   5 ERROR - thread did not exit
+ 63   4 ERROR - thread did not exit
+ 63   3 ERROR - thread did not exit
+ 63   1 ERROR - thread did not exit
+ 63   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 29/15 got 0/0
+ERROR - 5 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      3 |        14 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        2 |      5 |        19 |        8 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        4 |      6 |         9 |        3 |        5 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        4 |      8 |        13 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        1 |      9 |        18 |        1 |        3 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 75   1 ERROR - thread did not exit
+ 75   4 ERROR - thread did not exit
+ 75   5 ERROR - thread did not exit
+ 75   3 ERROR - thread did not exit
+ 75   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 39/21 got 0/0
+ERROR - 5 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      0 |        17 |       16 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        0 |      1 |        13 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        2 |      4 |        17 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        2 |      4 |         9 |        8 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      9 |        14 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 69   1 ERROR - thread did not exit
+ 69   2 ERROR - thread did not exit
+ 69   4 ERROR - thread did not exit
+ 69   5 ERROR - thread did not exit
+ 69   3 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 37/21 got 0/0
+ERROR - 5 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        3 |      1 |        16 |        9 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        0 |      7 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        0 |      8 |        17 |       13 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      9 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        0 |      9 |         7 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 77   4 ERROR - thread did not exit
+ 77   1 ERROR - thread did not exit
+ 77   3 ERROR - thread did not exit
+ 77   2 ERROR - thread did not exit
+ 77   5 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 37/21 got 0/0
+ERROR - 5 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        2 |      0 |        10 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        3 |      2 |         6 |        1 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      3 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        4 |      6 |         8 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        2 |      8 |        16 |        1 |        7 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 51   2 ERROR - thread did not exit
+ 51   3 ERROR - thread did not exit
+ 51   1 ERROR - thread did not exit
+ 51   5 ERROR - thread did not exit
+ 51   4 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 20/9 got 0/0
+ERROR - 5 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        3 |      4 |        16 |       11 |        5 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        4 |      6 |        12 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        2 |      7 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        4 |      7 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        4 |      8 |         7 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 75   3 ERROR - thread did not exit
+ 75   5 ERROR - thread did not exit
+ 75   2 ERROR - thread did not exit
+ 75   4 ERROR - thread did not exit
+ 75   1 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 37/21 got 0/0
+ERROR - 5 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      3 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        0 |      7 |         8 |        3 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        3 |      7 |        16 |        3 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        0 |      8 |        17 |        3 |        5 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      9 |        14 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 67   1 ERROR - thread did not exit
+ 67   3 ERROR - thread did not exit
+ 67   4 ERROR - thread did not exit
+ 67   5 ERROR - thread did not exit
+ 67   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 30/13 got 0/0
+ERROR - 5 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        0 |      4 |        14 |        5 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        3 |      7 |        16 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      8 |        14 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        4 |      8 |        11 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      9 |        11 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 69   5 ERROR - thread did not exit
+ 69   3 ERROR - thread did not exit
+ 69   1 ERROR - thread did not exit
+ 69   4 ERROR - thread did not exit
+ 69   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 35/21 got 0/0
+ERROR - 5 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        1 |      0 |        13 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      2 |        19 |        5 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        3 |      4 |        11 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      6 |        15 |        7 |        6 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      9 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 79   4 ERROR - thread did not exit
+ 79   1 ERROR - thread did not exit
+ 79   5 ERROR - thread did not exit
+ 79   3 ERROR - thread did not exit
+ 79   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 39/22 got 0/0
+ERROR - 5 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        1 |      3 |        13 |        7 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        1 |      6 |        10 |        4 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        0 |      8 |         6 |        3 |        6 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        3 |      8 |        10 |        8 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        1 |      8 |         6 |        5 |        7 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 56   1 ERROR - thread did not exit
+ 56   2 ERROR - thread did not exit
+ 56   3 ERROR - thread did not exit
+ 56   4 ERROR - thread did not exit
+ 56   5 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 28/12 got 0/0
+ERROR - 5 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      0 |        17 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        0 |      1 |        10 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        0 |      1 |         8 |        3 |        6 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        4 |      2 |        10 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        4 |      5 |        15 |        9 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        2 |      9 |         7 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 66   3 ERROR - thread did not exit
+ 66   2 ERROR - thread did not exit
+ 66   4 ERROR - thread did not exit
+ 66   5 ERROR - thread did not exit
+ 66   1 ERROR - thread did not exit
+ 66   6 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 32/20 got 0/0
+ERROR - 6 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        0 |      2 |         7 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        1 |      5 |        16 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        1 |      5 |        15 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        0 |      8 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        0 |      9 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        1 |      9 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 81   1 ERROR - thread did not exit
+ 81   4 ERROR - thread did not exit
+ 81   6 ERROR - thread did not exit
+ 81   2 ERROR - thread did not exit
+ 81   3 ERROR - thread did not exit
+ 81   5 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 34/20 got 0/0
+ERROR - 6 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        1 |      0 |         8 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      1 |        17 |        6 |        6 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        3 |      5 |        13 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      7 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        2 |      8 |        13 |       11 |        6 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        3 |      8 |         7 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 76   4 ERROR - thread did not exit
+ 76   1 ERROR - thread did not exit
+ 76   3 ERROR - thread did not exit
+ 76   2 ERROR - thread did not exit
+ 76   5 ERROR - thread did not exit
+ 76   6 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 34/19 got 0/0
+ERROR - 6 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        3 |      0 |         6 |        3 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        0 |      1 |        15 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        1 |      2 |        17 |       15 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        4 |      5 |         9 |        5 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        2 |      5 |        12 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      8 |        11 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 72   4 ERROR - thread did not exit
+ 72   1 ERROR - thread did not exit
+ 72   6 ERROR - thread did not exit
+ 72   3 ERROR - thread did not exit
+ 72   5 ERROR - thread did not exit
+ 72   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 34/20 got 0/0
+ERROR - 6 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      1 |        14 |        5 |        6 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        2 |      1 |        12 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        1 |      1 |         5 |        4 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        0 |      4 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        0 |      6 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        3 |      8 |        15 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 56   1 ERROR - thread did not exit
+ 56   2 ERROR - thread did not exit
+ 56   5 ERROR - thread did not exit
+ 56   6 ERROR - thread did not exit
+ 56   3 ERROR - thread did not exit
+ 56   4 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 24/13 got 0/0
+ERROR - 6 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        1 |      2 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      3 |        10 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        4 |      4 |        10 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      5 |        16 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        1 |      5 |        12 |        7 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        0 |      9 |        12 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 66   5 ERROR - thread did not exit
+ 66   2 ERROR - thread did not exit
+ 66   6 ERROR - thread did not exit
+ 66   1 ERROR - thread did not exit
+ 66   3 ERROR - thread did not exit
+ 66   4 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 31/19 got 0/0
+ERROR - 6 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        1 |      2 |        13 |        3 |        5 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        0 |      2 |        15 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        3 |      3 |        12 |        1 |        5 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        1 |      5 |        17 |       13 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        0 |      6 |         5 |        2 |        6 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        2 |      8 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 77   2 ERROR - thread did not exit
+ 77   6 ERROR - thread did not exit
+ 77   3 ERROR - thread did not exit
+ 77   5 ERROR - thread did not exit
+ 77   1 ERROR - thread did not exit
+ 77   4 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 33/18 got 0/0
+ERROR - 6 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        3 |      0 |        16 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        0 |      0 |         7 |        3 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        3 |      1 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        4 |      3 |        16 |       13 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      4 |         7 |        4 |        6 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        0 |      7 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 69   3 ERROR - thread did not exit
+ 69   6 ERROR - thread did not exit
+ 69   5 ERROR - thread did not exit
+ 69   4 ERROR - thread did not exit
+ 69   2 ERROR - thread did not exit
+ 69   1 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 33/18 got 0/0
+ERROR - 6 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        4 |      0 |         7 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        4 |      0 |         6 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        4 |      2 |        13 |        1 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        1 |      6 |        19 |        9 |        6 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        4 |      8 |        14 |       11 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      8 |         6 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 70   3 ERROR - thread did not exit
+ 70   4 ERROR - thread did not exit
+ 70   5 ERROR - thread did not exit
+ 70   6 ERROR - thread did not exit
+ 70   1 ERROR - thread did not exit
+ 70   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 28/14 got 0/0
+ERROR - 6 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      2 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        2 |      3 |        10 |        6 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        2 |      5 |         9 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        0 |      5 |         7 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        2 |      7 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        4 |      9 |         7 |        1 |        7 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 58   1 ERROR - thread did not exit
+ 58   2 ERROR - thread did not exit
+ 58   4 ERROR - thread did not exit
+ 58   5 ERROR - thread did not exit
+ 58   6 ERROR - thread did not exit
+ 58   3 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 25/13 got 0/0
+ERROR - 6 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        1 |      0 |        13 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        1 |      2 |        12 |        9 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        0 |      2 |        11 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        3 |      2 |         9 |        5 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        0 |      3 |         8 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        4 |      3 |        11 |        4 |        9 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 63   3 ERROR - thread did not exit
+ 63   1 ERROR - thread did not exit
+ 63   2 ERROR - thread did not exit
+ 63   5 ERROR - thread did not exit
+ 63   4 ERROR - thread did not exit
+ 63   6 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 36/22 got 0/0
+ERROR - 6 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        3 |      1 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        1 |      3 |         6 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        4 |      4 |        11 |        2 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        1 |      4 |        15 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      7 |        10 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        4 |      9 |         6 |        1 |        9 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 67   5 ERROR - thread did not exit
+ 67   2 ERROR - thread did not exit
+ 67   1 ERROR - thread did not exit
+ 67   6 ERROR - thread did not exit
+ 67   3 ERROR - thread did not exit
+ 67   4 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 30/17 got 0/0
+ERROR - 6 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        0 |      0 |        13 |        6 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      3 |         7 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        0 |      4 |        13 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        0 |      6 |         6 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        0 |      7 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        3 |      8 |        13 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 69   2 ERROR - thread did not exit
+ 69   1 ERROR - thread did not exit
+ 69   5 ERROR - thread did not exit
+ 69   4 ERROR - thread did not exit
+ 69   6 ERROR - thread did not exit
+ 69   3 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 31/19 got 0/0
+ERROR - 6 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        1 |      2 |         9 |        2 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        3 |      2 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        0 |      5 |        19 |       15 |        5 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        3 |      5 |        13 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        0 |      9 |         9 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        1 |      9 |         7 |        1 |        5 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 68   1 ERROR - thread did not exit
+ 68   4 ERROR - thread did not exit
+ 68   2 ERROR - thread did not exit
+ 68   5 ERROR - thread did not exit
+ 68   3 ERROR - thread did not exit
+ 68   6 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 27/14 got 0/0
+ERROR - 6 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        0 |      0 |        12 |        9 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      2 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        3 |      6 |         6 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        4 |      7 |         6 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        4 |      7 |         7 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        2 |      9 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 67   1 ERROR - thread did not exit
+ 67   3 ERROR - thread did not exit
+ 67   6 ERROR - thread did not exit
+ 67   4 ERROR - thread did not exit
+ 67   5 ERROR - thread did not exit
+ 67   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 28/17 got 0/0
+ERROR - 6 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        1 |      0 |         9 |        6 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        0 |      1 |        16 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        1 |      1 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        1 |      4 |        15 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        0 |      6 |        11 |        7 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        1 |      8 |        14 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 83   5 ERROR - thread did not exit
+ 83   2 ERROR - thread did not exit
+ 83   3 ERROR - thread did not exit
+ 83   4 ERROR - thread did not exit
+ 83   1 ERROR - thread did not exit
+ 83   6 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 41/25 got 0/0
+ERROR - 6 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        1 |      2 |        12 |        4 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      3 |        10 |        1 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        1 |      3 |        15 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        1 |      4 |        15 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      5 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        2 |      7 |        18 |        8 |        5 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 90   5 ERROR - thread did not exit
+ 90   1 ERROR - thread did not exit
+ 90   4 ERROR - thread did not exit
+ 90   6 ERROR - thread did not exit
+ 90   3 ERROR - thread did not exit
+ 90   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 46/30 got 0/0
+ERROR - 6 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        3 |      0 |        15 |       12 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        2 |      2 |        14 |        8 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        4 |      3 |        17 |        2 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        1 |      4 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        1 |      6 |        15 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        3 |      6 |         7 |        6 |        4 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 85   3 ERROR - thread did not exit
+ 85   6 ERROR - thread did not exit
+ 85   4 ERROR - thread did not exit
+ 85   1 ERROR - thread did not exit
+ 85   2 ERROR - thread did not exit
+ 85   5 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 45/28 got 0/0
+ERROR - 6 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        0 |      0 |        15 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        1 |      1 |        12 |        8 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      5 |        15 |        2 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        0 |      5 |         6 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        0 |      5 |        17 |        3 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      6 |         6 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 70   2 ERROR - thread did not exit
+ 70   6 ERROR - thread did not exit
+ 70   1 ERROR - thread did not exit
+ 70   4 ERROR - thread did not exit
+ 70   5 ERROR - thread did not exit
+ 70   3 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 33/20 got 0/0
+ERROR - 6 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        0 |      2 |         8 |        6 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        0 |      2 |        10 |        4 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        0 |      3 |        12 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        4 |      8 |        16 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      9 |         7 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        0 |      9 |        16 |       15 |        8 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 78   4 ERROR - thread did not exit
+ 78   5 ERROR - thread did not exit
+ 78   3 ERROR - thread did not exit
+ 78   6 ERROR - thread did not exit
+ 78   1 ERROR - thread did not exit
+ 78   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 34/18 got 0/0
+ERROR - 6 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        3 |      0 |         7 |        5 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        1 |      0 |        11 |        9 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        0 |      4 |         8 |        4 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        1 |      5 |        17 |       10 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        2 |      6 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        2 |      7 |        13 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        2 |      8 |        19 |        5 |        5 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 98   3 ERROR - thread did not exit
+ 98   6 ERROR - thread did not exit
+ 98   7 ERROR - thread did not exit
+ 98   1 ERROR - thread did not exit
+ 98   4 ERROR - thread did not exit
+ 98   2 ERROR - thread did not exit
+ 98   5 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 42/26 got 0/0
+ERROR - 7 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        0 |      0 |        16 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        1 |      3 |        16 |        3 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      3 |        17 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        1 |      6 |        12 |       11 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        0 |      6 |        16 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        1 |      7 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        0 |      9 |         5 |        1 |        9 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 99   4 ERROR - thread did not exit
+ 99   1 ERROR - thread did not exit
+ 99   3 ERROR - thread did not exit
+ 99   2 ERROR - thread did not exit
+ 99   7 ERROR - thread did not exit
+ 99   6 ERROR - thread did not exit
+ 99   5 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 49/32 got 0/0
+ERROR - 7 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        0 |      3 |        10 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        4 |      3 |        17 |        2 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      4 |         8 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        0 |      6 |        19 |       12 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        4 |      7 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        4 |      7 |        12 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        3 |      9 |        13 |        7 |        8 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+106   5 ERROR - thread did not exit
+106   6 ERROR - thread did not exit
+106   2 ERROR - thread did not exit
+106   3 ERROR - thread did not exit
+106   1 ERROR - thread did not exit
+106   7 ERROR - thread did not exit
+106   4 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 47/30 got 0/0
+ERROR - 7 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        0 |      0 |        10 |        3 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        1 |      0 |        19 |       13 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        2 |      1 |        19 |        4 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        0 |      3 |        14 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        1 |      7 |         6 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      9 |        18 |        3 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        0 |      9 |        15 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+103   1 ERROR - thread did not exit
+103   7 ERROR - thread did not exit
+103   6 ERROR - thread did not exit
+103   4 ERROR - thread did not exit
+103   5 ERROR - thread did not exit
+103   2 ERROR - thread did not exit
+103   3 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 48/30 got 0/0
+ERROR - 7 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        0 |      4 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        2 |      4 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        2 |      5 |        11 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        0 |      6 |         7 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        1 |      7 |        14 |        1 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        3 |      7 |        16 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        1 |      8 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 80   1 ERROR - thread did not exit
+ 80   4 ERROR - thread did not exit
+ 80   6 ERROR - thread did not exit
+ 80   3 ERROR - thread did not exit
+ 80   2 ERROR - thread did not exit
+ 80   7 ERROR - thread did not exit
+ 80   5 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 32/20 got 0/0
+ERROR - 7 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        4 |      2 |        18 |       14 |        5 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        1 |      2 |        15 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        2 |      5 |        10 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        0 |      6 |        14 |        3 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        0 |      7 |        17 |       14 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        0 |      7 |        16 |       10 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      8 |         7 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+103   1 ERROR - thread did not exit
+103   7 ERROR - thread did not exit
+103   5 ERROR - thread did not exit
+103   6 ERROR - thread did not exit
+103   3 ERROR - thread did not exit
+103   4 ERROR - thread did not exit
+103   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 48/32 got 0/0
+ERROR - 7 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        0 |      0 |        18 |        9 |        6 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        1 |      0 |         7 |        3 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        4 |      0 |         7 |        3 |        5 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        3 |      1 |        12 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        4 |      4 |        14 |        6 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        3 |      5 |         5 |        4 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        0 |      9 |        16 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 84   2 ERROR - thread did not exit
+ 84   3 ERROR - thread did not exit
+ 84   5 ERROR - thread did not exit
+ 84   6 ERROR - thread did not exit
+ 84   1 ERROR - thread did not exit
+ 84   4 ERROR - thread did not exit
+ 84   7 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 36/22 got 0/0
+ERROR - 7 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        0 |      1 |        19 |       17 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        3 |      3 |        18 |        9 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      5 |         9 |        7 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      5 |        12 |        8 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        3 |      8 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        3 |      8 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        4 |      9 |         9 |        4 |        4 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 91   7 ERROR - thread did not exit
+ 91   4 ERROR - thread did not exit
+ 91   2 ERROR - thread did not exit
+ 91   3 ERROR - thread did not exit
+ 91   5 ERROR - thread did not exit
+ 91   6 ERROR - thread did not exit
+ 91   1 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 43/27 got 0/0
+ERROR - 7 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        1 |      2 |        14 |       11 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        1 |      3 |         7 |        1 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        4 |      4 |        16 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        1 |      4 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        1 |      4 |        17 |        8 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        3 |      6 |         7 |        4 |        5 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        3 |      9 |         9 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 89   5 ERROR - thread did not exit
+ 89   6 ERROR - thread did not exit
+ 89   1 ERROR - thread did not exit
+ 89   2 ERROR - thread did not exit
+ 89   4 ERROR - thread did not exit
+ 89   3 ERROR - thread did not exit
+ 89   7 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 43/27 got 0/0
+ERROR - 7 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        1 |      0 |        14 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        0 |      1 |        14 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        1 |      4 |        10 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        3 |      5 |        10 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        4 |      6 |        17 |        2 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        4 |      7 |        13 |        3 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        1 |      8 |        10 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 96   2 ERROR - thread did not exit
+ 96   1 ERROR - thread did not exit
+ 96   3 ERROR - thread did not exit
+ 96   4 ERROR - thread did not exit
+ 96   5 ERROR - thread did not exit
+ 96   6 ERROR - thread did not exit
+ 96   7 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 44/29 got 0/0
+ERROR - 7 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        1 |      2 |        18 |       14 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      4 |        13 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        3 |      4 |         5 |        1 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        2 |      5 |         5 |        4 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        0 |      5 |        15 |        1 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        0 |      8 |        10 |        4 |        6 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        1 |      8 |        16 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 83   7 ERROR - thread did not exit
+ 83   1 ERROR - thread did not exit
+ 83   3 ERROR - thread did not exit
+ 83   4 ERROR - thread did not exit
+ 83   5 ERROR - thread did not exit
+ 83   2 ERROR - thread did not exit
+ 83   6 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 40/24 got 0/0
+ERROR - 7 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      1 |        10 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        2 |      3 |        11 |        4 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        2 |      3 |         9 |        8 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      4 |        11 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        2 |      4 |        14 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      8 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        3 |      8 |        14 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 87   1 ERROR - thread did not exit
+ 87   6 ERROR - thread did not exit
+ 87   7 ERROR - thread did not exit
+ 87   3 ERROR - thread did not exit
+ 87   5 ERROR - thread did not exit
+ 87   2 ERROR - thread did not exit
+ 87   4 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 42/28 got 0/0
+ERROR - 7 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        3 |      0 |         7 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        4 |      0 |        12 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        1 |      1 |        17 |        9 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        2 |      2 |        19 |        4 |        5 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        0 |      5 |         6 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      8 |        12 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        0 |      8 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 77   3 ERROR - thread did not exit
+ 77   4 ERROR - thread did not exit
+ 77   6 ERROR - thread did not exit
+ 77   7 ERROR - thread did not exit
+ 77   2 ERROR - thread did not exit
+ 77   1 ERROR - thread did not exit
+ 77   5 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 32/20 got 0/0
+ERROR - 7 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      0 |         5 |        3 |        6 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        1 |      1 |         7 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      4 |         7 |        1 |        6 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        0 |      5 |        14 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        3 |      9 |        17 |       11 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        0 |      9 |        16 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        4 |      9 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 74   1 ERROR - thread did not exit
+ 74   4 ERROR - thread did not exit
+ 74   2 ERROR - thread did not exit
+ 74   7 ERROR - thread did not exit
+ 74   3 ERROR - thread did not exit
+ 74   5 ERROR - thread did not exit
+ 74   6 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 28/16 got 0/0
+ERROR - 7 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        1 |      0 |        10 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        1 |      2 |         5 |        4 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        4 |      5 |        16 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        0 |      5 |         5 |        2 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        1 |      7 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        4 |      8 |        13 |        1 |        6 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        3 |      8 |        17 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 83   4 ERROR - thread did not exit
+ 83   5 ERROR - thread did not exit
+ 83   6 ERROR - thread did not exit
+ 83   7 ERROR - thread did not exit
+ 83   2 ERROR - thread did not exit
+ 83   1 ERROR - thread did not exit
+ 83   3 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 34/21 got 0/0
+ERROR - 7 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        1 |      0 |        16 |       13 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        0 |      1 |         9 |        7 |        5 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        0 |      1 |        18 |       13 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        1 |      1 |        13 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        1 |      5 |         6 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        2 |      8 |        11 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        2 |      9 |         8 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 83   5 ERROR - thread did not exit
+ 83   1 ERROR - thread did not exit
+ 83   4 ERROR - thread did not exit
+ 83   6 ERROR - thread did not exit
+ 83   3 ERROR - thread did not exit
+ 83   7 ERROR - thread did not exit
+ 83   2 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 37/24 got 0/0
+ERROR - 7 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        0 |      1 |        11 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        4 |      1 |        12 |        8 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      2 |         9 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      3 |        14 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        2 |      3 |        17 |        2 |        5 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        0 |      5 |        14 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        2 |      7 |        12 |        8 |        6 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 94   2 ERROR - thread did not exit
+ 94   6 ERROR - thread did not exit
+ 94   1 ERROR - thread did not exit
+ 94   3 ERROR - thread did not exit
+ 94   7 ERROR - thread did not exit
+ 94   5 ERROR - thread did not exit
+ 94   4 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 46/31 got 0/0
+ERROR - 7 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      0 |        19 |        9 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        2 |      0 |         8 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      2 |        17 |        8 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        4 |      3 |        10 |        1 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      5 |        11 |        3 |        6 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        3 |      7 |        13 |        1 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        1 |      7 |         6 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 87   1 ERROR - thread did not exit
+ 87   6 ERROR - thread did not exit
+ 87   2 ERROR - thread did not exit
+ 87   7 ERROR - thread did not exit
+ 87   3 ERROR - thread did not exit
+ 87   4 ERROR - thread did not exit
+ 87   5 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 39/24 got 0/0
+ERROR - 7 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        4 |      1 |        19 |        9 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      1 |        10 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        4 |      5 |        13 |        2 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        1 |      5 |        17 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        2 |      6 |        16 |        2 |        6 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      8 |        19 |       10 |        6 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        4 |      9 |         7 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+107   1 ERROR - thread did not exit
+107   3 ERROR - thread did not exit
+107   4 ERROR - thread did not exit
+107   6 ERROR - thread did not exit
+107   7 ERROR - thread did not exit
+107   2 ERROR - thread did not exit
+107   5 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 47/31 got 0/0
+ERROR - 7 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        0 |      2 |        17 |       12 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        0 |      2 |         7 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        0 |      4 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        3 |      7 |         7 |        2 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        1 |      8 |        15 |       10 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      8 |        15 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        4 |      8 |        11 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 91   4 ERROR - thread did not exit
+ 91   6 ERROR - thread did not exit
+ 91   3 ERROR - thread did not exit
+ 91   7 ERROR - thread did not exit
+ 91   1 ERROR - thread did not exit
+ 91   2 ERROR - thread did not exit
+ 91   5 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 42/26 got 0/0
+ERROR - 7 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        1 |      0 |        10 |        8 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   8 |        3 |      1 |        14 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        3 |      2 |         5 |        3 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        1 |      2 |        16 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      7 |        14 |        9 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        4 |      7 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        4 |      8 |        17 |       12 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        3 |      9 |        19 |       12 |        5 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+104   2 ERROR - thread did not exit
+104   8 ERROR - thread did not exit
+104   4 ERROR - thread did not exit
+104   5 ERROR - thread did not exit
+104   1 ERROR - thread did not exit
+104   6 ERROR - thread did not exit
+104   3 ERROR - thread did not exit
+104   7 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 43/29 got 0/0
+ERROR - 8 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        4 |      0 |         9 |        8 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   8 |        4 |      0 |        15 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      2 |        14 |        7 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        1 |      2 |         9 |        1 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        4 |      4 |        19 |        3 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        1 |      6 |        15 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        0 |      6 |        15 |       11 |        5 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        2 |      7 |        12 |       10 |        2 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+113   6 ERROR - thread did not exit
+113   8 ERROR - thread did not exit
+113   1 ERROR - thread did not exit
+113   2 ERROR - thread did not exit
+113   5 ERROR - thread did not exit
+113   3 ERROR - thread did not exit
+113   7 ERROR - thread did not exit
+113   4 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 54/37 got 0/0
+ERROR - 8 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        4 |      1 |         9 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        3 |      1 |        18 |       16 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        0 |      1 |        16 |        6 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        4 |      4 |        10 |        3 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        1 |      6 |         8 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   8 |        4 |      7 |         8 |        3 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        4 |      8 |        13 |        9 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        1 |      9 |        14 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+104   2 ERROR - thread did not exit
+104   3 ERROR - thread did not exit
+104   5 ERROR - thread did not exit
+104   4 ERROR - thread did not exit
+104   7 ERROR - thread did not exit
+104   8 ERROR - thread did not exit
+104   6 ERROR - thread did not exit
+104   1 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 46/30 got 0/0
+ERROR - 8 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      2 |         7 |        4 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        3 |      2 |        17 |        3 |        5 |
++-----+----------+--------+-----------+----------+----------+
+|   8 |        4 |      2 |        17 |       12 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        1 |      7 |         9 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      9 |        13 |        5 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        3 |      9 |        15 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        1 |      9 |        18 |       17 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        0 |      9 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+115   2 ERROR - thread did not exit
+115   4 ERROR - thread did not exit
+115   8 ERROR - thread did not exit
+115   3 ERROR - thread did not exit
+115   1 ERROR - thread did not exit
+115   5 ERROR - thread did not exit
+115   6 ERROR - thread did not exit
+115   7 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 55/37 got 0/0
+ERROR - 8 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   8 |        2 |      0 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      1 |         8 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        4 |      1 |        13 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        4 |      1 |        14 |       12 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        2 |      5 |        16 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        3 |      7 |        15 |        9 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        0 |      8 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        4 |      8 |        14 |        8 |        3 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 89   8 ERROR - thread did not exit
+ 89   2 ERROR - thread did not exit
+ 89   4 ERROR - thread did not exit
+ 89   6 ERROR - thread did not exit
+ 89   7 ERROR - thread did not exit
+ 89   5 ERROR - thread did not exit
+ 89   1 ERROR - thread did not exit
+ 89   3 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 39/26 got 0/0
+ERROR - 8 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        4 |      1 |        16 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   8 |        4 |      1 |        16 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        0 |      3 |         6 |        2 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        0 |      6 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        1 |      8 |        15 |       12 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        1 |      8 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        4 |      9 |        17 |       14 |        5 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        0 |      9 |        15 |        1 |        4 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+121   4 ERROR - thread did not exit
+121   8 ERROR - thread did not exit
+121   1 ERROR - thread did not exit
+121   5 ERROR - thread did not exit
+121   2 ERROR - thread did not exit
+121   6 ERROR - thread did not exit
+121   3 ERROR - thread did not exit
+121   7 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 59/42 got 0/0
+ERROR - 8 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   8 |        3 |      0 |        12 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        1 |      1 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        1 |      5 |        16 |        5 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        1 |      5 |        10 |        9 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        3 |      5 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      8 |        10 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        1 |      8 |         5 |        4 |        5 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        1 |      8 |        15 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 91   8 ERROR - thread did not exit
+ 91   4 ERROR - thread did not exit
+ 91   5 ERROR - thread did not exit
+ 91   6 ERROR - thread did not exit
+ 91   7 ERROR - thread did not exit
+ 91   1 ERROR - thread did not exit
+ 91   2 ERROR - thread did not exit
+ 91   3 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 39/26 got 0/0
+ERROR - 8 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        3 |      2 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        1 |      2 |        17 |        9 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   8 |        3 |      2 |        13 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        1 |      3 |        18 |       13 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        3 |      3 |         9 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        2 |      4 |         8 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        1 |      6 |         5 |        1 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        0 |      7 |        10 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+100   5 ERROR - thread did not exit
+100   7 ERROR - thread did not exit
+100   8 ERROR - thread did not exit
+100   1 ERROR - thread did not exit
+100   6 ERROR - thread did not exit
+100   4 ERROR - thread did not exit
+100   2 ERROR - thread did not exit
+100   3 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 46/31 got 0/0
+ERROR - 8 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        0 |      0 |        12 |        6 |        5 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      3 |        13 |        6 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        0 |      3 |         5 |        1 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      4 |         9 |        6 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   8 |        2 |      5 |        12 |        5 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        2 |      8 |        17 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      9 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        2 |      9 |        12 |       11 |        9 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 98   7 ERROR - thread did not exit
+ 98   1 ERROR - thread did not exit
+ 98   4 ERROR - thread did not exit
+ 98   2 ERROR - thread did not exit
+ 98   8 ERROR - thread did not exit
+ 98   5 ERROR - thread did not exit
+ 98   3 ERROR - thread did not exit
+ 98   6 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 47/30 got 0/0
+ERROR - 8 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        2 |      1 |        15 |        7 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        1 |      1 |         6 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        3 |      2 |        12 |        5 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        0 |      3 |        17 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        3 |      4 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      5 |         7 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   8 |        0 |      5 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      6 |        12 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 79   4 ERROR - thread did not exit
+ 79   5 ERROR - thread did not exit
+ 79   3 ERROR - thread did not exit
+ 79   6 ERROR - thread did not exit
+ 79   7 ERROR - thread did not exit
+ 79   2 ERROR - thread did not exit
+ 79   8 ERROR - thread did not exit
+ 79   1 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 34/22 got 0/0
+ERROR - 8 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        0 |      0 |        17 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      1 |        17 |       12 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        3 |      1 |        14 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   8 |        2 |      1 |        16 |        7 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        1 |      4 |        12 |        1 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        1 |      8 |         6 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        2 |      8 |        17 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        4 |      9 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+116   4 ERROR - thread did not exit
+116   2 ERROR - thread did not exit
+116   7 ERROR - thread did not exit
+116   8 ERROR - thread did not exit
+116   3 ERROR - thread did not exit
+116   5 ERROR - thread did not exit
+116   6 ERROR - thread did not exit
+116   1 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 58/41 got 0/0
+ERROR - 8 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      0 |        10 |        7 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        1 |      0 |         5 |        2 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   8 |        3 |      0 |        16 |       13 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      3 |        11 |       10 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        0 |      4 |        15 |        8 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        2 |      5 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        2 |      5 |        16 |       15 |        6 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        0 |      8 |        19 |        9 |        8 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+118   3 ERROR - thread did not exit
+118   5 ERROR - thread did not exit
+118   8 ERROR - thread did not exit
+118   1 ERROR - thread did not exit
+118   7 ERROR - thread did not exit
+118   2 ERROR - thread did not exit
+118   4 ERROR - thread did not exit
+118   6 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 53/35 got 0/0
+ERROR - 8 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        3 |      0 |        16 |       13 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        1 |      1 |        11 |        1 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        0 |      1 |        11 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        4 |      2 |         6 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        2 |      3 |        13 |        8 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        1 |      4 |         7 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   8 |        2 |      5 |        17 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        4 |      8 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 99   4 ERROR - thread did not exit
+ 99   1 ERROR - thread did not exit
+ 99   3 ERROR - thread did not exit
+ 99   7 ERROR - thread did not exit
+ 99   2 ERROR - thread did not exit
+ 99   5 ERROR - thread did not exit
+ 99   8 ERROR - thread did not exit
+ 99   6 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 46/30 got 0/0
+ERROR - 8 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        2 |      2 |        16 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        4 |      3 |        15 |        3 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        4 |      6 |         6 |        2 |        5 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        2 |      6 |        12 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   8 |        2 |      7 |        13 |        8 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      8 |        17 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        3 |      8 |        10 |        9 |        6 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        4 |      9 |        15 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+105   2 ERROR - thread did not exit
+105   1 ERROR - thread did not exit
+105   4 ERROR - thread did not exit
+105   7 ERROR - thread did not exit
+105   8 ERROR - thread did not exit
+105   3 ERROR - thread did not exit
+105   6 ERROR - thread did not exit
+105   5 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 51/35 got 0/0
+ERROR - 8 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        0 |      1 |        14 |       13 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        3 |      2 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        4 |      2 |        14 |        6 |        6 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        3 |      2 |         6 |        1 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   8 |        4 |      2 |        18 |       11 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        1 |      5 |        17 |        5 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      6 |         6 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      9 |         8 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+108   4 ERROR - thread did not exit
+108   5 ERROR - thread did not exit
+108   6 ERROR - thread did not exit
+108   7 ERROR - thread did not exit
+108   8 ERROR - thread did not exit
+108   1 ERROR - thread did not exit
+108   2 ERROR - thread did not exit
+108   3 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 48/32 got 0/0
+ERROR - 8 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        0 |      1 |         6 |        3 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        3 |      1 |        15 |       14 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        1 |      1 |        18 |       16 |        7 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        2 |      2 |        18 |        5 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        1 |      4 |         5 |        1 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        2 |      6 |        17 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   8 |        0 |      6 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        0 |      7 |        14 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+111   1 ERROR - thread did not exit
+111   3 ERROR - thread did not exit
+111   7 ERROR - thread did not exit
+111   4 ERROR - thread did not exit
+111   2 ERROR - thread did not exit
+111   6 ERROR - thread did not exit
+111   8 ERROR - thread did not exit
+111   5 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 53/36 got 0/0
+ERROR - 8 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   8 |        3 |      1 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      2 |        19 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        4 |      3 |        13 |        2 |        6 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      4 |        16 |       11 |        4 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      7 |        16 |       13 |        1 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        0 |      7 |        14 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        0 |      7 |        18 |       14 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        2 |      9 |        18 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+132   8 ERROR - thread did not exit
+132   1 ERROR - thread did not exit
+132   4 ERROR - thread did not exit
+132   2 ERROR - thread did not exit
+132   3 ERROR - thread did not exit
+132   6 ERROR - thread did not exit
+132   7 ERROR - thread did not exit
+132   5 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 69/50 got 0/0
+ERROR - 8 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        0 |      0 |         6 |        5 |        3 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        4 |      0 |        15 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   8 |        3 |      0 |         8 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        3 |      3 |         6 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        0 |      3 |        12 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        2 |      4 |        17 |        3 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        4 |      4 |        18 |        6 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        4 |      8 |         7 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 90   6 ERROR - thread did not exit
+ 90   7 ERROR - thread did not exit
+ 90   8 ERROR - thread did not exit
+ 90   1 ERROR - thread did not exit
+ 90   2 ERROR - thread did not exit
+ 90   3 ERROR - thread did not exit
+ 90   4 ERROR - thread did not exit
+ 90   5 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 37/25 got 0/0
+ERROR - 8 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        4 |      1 |         8 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        2 |      2 |        10 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        0 |      4 |        13 |        4 |        9 |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        2 |      4 |         6 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        3 |      4 |        14 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        2 |      6 |        17 |        4 |        8 |
++-----+----------+--------+-----------+----------+----------+
+|   8 |        2 |      6 |         5 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        4 |      8 |         8 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+ 89   5 ERROR - thread did not exit
+ 89   1 ERROR - thread did not exit
+ 89   3 ERROR - thread did not exit
+ 89   6 ERROR - thread did not exit
+ 89   7 ERROR - thread did not exit
+ 89   2 ERROR - thread did not exit
+ 89   8 ERROR - thread did not exit
+ 89   4 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 35/23 got 0/0
+ERROR - 8 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
+
+
++-----+----------+--------+-----------+----------+----------+
+| tid | priority | arrive | cpu burst | io start | io burst |
++-----+----------+--------+-----------+----------+----------+
+|   6 |        1 |      0 |         8 |        1 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   8 |        1 |      1 |        13 |       12 |        2 |
++-----+----------+--------+-----------+----------+----------+
+|   7 |        1 |      4 |        12 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   3 |        4 |      5 |        16 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   5 |        4 |      5 |        12 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   2 |        3 |      6 |        17 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+|   1 |        0 |      7 |        12 |        1 |        6 |
++-----+----------+--------+-----------+----------+----------+
+|   4 |        1 |      8 |        11 |        0 |        0 |
++-----+----------+--------+-----------+----------+----------+
+
+Preemptive Shortest Remaining Time First
+100   6 ERROR - thread did not exit
+100   8 ERROR - thread did not exit
+100   7 ERROR - thread did not exit
+100   3 ERROR - thread did not exit
+100   5 ERROR - thread did not exit
+100   2 ERROR - thread did not exit
+100   1 ERROR - thread did not exit
+100   4 ERROR - thread did not exit
+
+ERROR - Mean Turnaround & Waiting Times - Expected 48/34 got 0/0
+ERROR - 8 threads have invalid turnaround and/or waiting times
+
+Mean Turnaround Time:   0
+   Mean Waiting Time:   0
++-----+-----------------+--------------+
+| tid | turnaround time | waiting time |
++-----+-----------------+--------------+
+
+FAIL
 
