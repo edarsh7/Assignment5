@@ -500,7 +500,7 @@ void prmtv_prio_sysready()
 
   if(head != NULL)
   {
-    if(td_off_cpu == head->thread)
+    if(td_off_cpu == head->thread && head->next != NULL)
     {
       pop(&head);
       td_off_cpu = NULL;
