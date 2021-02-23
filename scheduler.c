@@ -184,56 +184,6 @@ stats_t *stats()
   return stats;
 }
 
-void append(struct node** head_ref, thread_t * t)
-{
-  /* 1. allocate node */
-  struct node* new_node
-      = (struct node*)malloc(sizeof(struct node));
-
-  struct node* last = *head_ref; /* used in step 5*/
-
-  /* 3. This new node is going to be the last node, so
-        make next of it as NULL*/
-  new_node->next = NULL;
-  new_node->thread = t;
-  new_node->quantum_ct = q_value;
-  new_node->waittime = 0;
-  new_node->turnaround = 0;
-
-  /* 4. If the Linked List is empty, then make the new
-        node as head */
-  if (*head_ref == NULL) {
-      *head_ref = new_node;
-      return;
-  }
-
-  /* 5. Else traverse till the last node */
-  while (last->next != NULL)
-      last = last->next;
-
-  /* 6. Change the next of last node */
-  last->next = new_node;
-
-  return;
-}
-
-
-void pop(struct node** head_ref)
-{
-  struct node *t;
-
-  if(*head_ref == NULL)
-  {
-    return;
-  }
-
-  
-  t = (*head_ref)->next;
-  (*head_ref) = NULL;
-  (*head_ref) = t;
-  
-}
-
 /*= = = = = = = = = = = = = = = = = ROUND ROBIN FUNCTIONS = = = = = = = = = = = = = = = = =*/
 
 void rr_sysready()
@@ -519,8 +469,6 @@ void turnaround(thread_t *td)
   temp->turnaround = temp->completion - temp->arrival + 1;
 }
 
-
-
 void sortedInsert(struct node** head_ref, thread_t *t) 
 { 
     struct node* new_node = (struct node*)malloc(sizeof(struct node));
@@ -545,3 +493,53 @@ void sortedInsert(struct node** head_ref, thread_t *t)
       temp->next = new_node; 
     } 
 } 
+
+void append(struct node** head_ref, thread_t * t)
+{
+  /* 1. allocate node */
+  struct node* new_node
+      = (struct node*)malloc(sizeof(struct node));
+
+  struct node* last = *head_ref; /* used in step 5*/
+
+  /* 3. This new node is going to be the last node, so
+        make next of it as NULL*/
+  new_node->next = NULL;
+  new_node->thread = t;
+  new_node->quantum_ct = q_value;
+  new_node->waittime = 0;
+  new_node->turnaround = 0;
+
+  /* 4. If the Linked List is empty, then make the new
+        node as head */
+  if (*head_ref == NULL) {
+      *head_ref = new_node;
+      return;
+  }
+
+  /* 5. Else traverse till the last node */
+  while (last->next != NULL)
+      last = last->next;
+
+  /* 6. Change the next of last node */
+  last->next = new_node;
+
+  return;
+}
+
+
+void pop(struct node** head_ref)
+{
+  struct node *t;
+
+  if(*head_ref == NULL)
+  {
+    return;
+  }
+
+  
+  t = (*head_ref)->next;
+  (*head_ref) = NULL;
+  (*head_ref) = t;
+  
+}
