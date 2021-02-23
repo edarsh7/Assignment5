@@ -33,10 +33,12 @@ thread_t * io_thread = NULL;
 struct node *head = NULL;
 struct node *thread_list = NULL;
 
-void printList();
+
 void sortedInsert(struct node** head_ref, thread_t *t);
 void append(struct node** head_ref, thread_t * t);
 void pop(struct node** head_ref);
+
+void turnaround(thread_t *td);
 
 // ROUND ROBIN SET OF FUNCTIONS
 void rr_sysready();
@@ -44,9 +46,6 @@ void rr_sysexec(thread_t *t);
 void rr_sys_rd_wr(thread_t *t);
 void rr_sysexit(thread_t *t);
 void rr_iocomplete(thread_t *t);
-//idk
-
-void turnaround(thread_t *td);
 void rr_iostarting(thread_t *t);
 
 //NON-PREEMPTIVE PRIORITY SET OF FUNCTIONS
@@ -185,7 +184,38 @@ stats_t *stats()
   return stats;
 }
 
+void append(struct node** head_ref, thread_t * t)
+{
+  /* 1. allocate node */
+  struct node* new_node
+      = (struct node*)malloc(sizeof(struct node));
 
+  struct node* last = *head_ref; /* used in step 5*/
+
+  /* 3. This new node is going to be the last node, so
+        make next of it as NULL*/
+  new_node->next = NULL;
+  new_node->thread = t;
+  new_node->quantum_ct = q_value;
+  new_node->waittime = 0;
+  new_node->turnaround = 0;
+
+  /* 4. If the Linked List is empty, then make the new
+        node as head */
+  if (*head_ref == NULL) {
+      *head_ref = new_node;
+      return;
+  }
+
+  /* 5. Else traverse till the last node */
+  while (last->next != NULL)
+      last = last->next;
+
+  /* 6. Change the next of last node */
+  last->next = new_node;
+
+  return;
+}
 /*= = = = = = = = = = = = = = = = = ROUND ROBIN FUNCTIONS = = = = = = = = = = = = = = = = =*/
 
 void rr_sysready()
@@ -194,7 +224,6 @@ void rr_sysready()
   { 
     if(head->quantum_ct == 0)
     {
-      printf("yes");
       struct node *temp_x;
       temp_x = thread_list;
       while(temp_x->thread->tid != head->thread->tid)
@@ -470,38 +499,7 @@ void turnaround(thread_t *td)
   temp->turnaround = temp->completion - temp->arrival + 1;
 }
 
-void append(struct node** head_ref, thread_t * t)
-{
-  /* 1. allocate node */
-  struct node* new_node
-      = (struct node*)malloc(sizeof(struct node));
 
-  struct node* last = *head_ref; /* used in step 5*/
-
-  /* 3. This new node is going to be the last node, so
-        make next of it as NULL*/
-  new_node->next = NULL;
-  new_node->thread = t;
-  new_node->quantum_ct = q_value;
-  new_node->waittime = 0;
-  new_node->turnaround = 0;
-
-  /* 4. If the Linked List is empty, then make the new
-        node as head */
-  if (*head_ref == NULL) {
-      *head_ref = new_node;
-      return;
-  }
-
-  /* 5. Else traverse till the last node */
-  while (last->next != NULL)
-      last = last->next;
-
-  /* 6. Change the next of last node */
-  last->next = new_node;
-
-  return;
-}
 
 void sortedInsert(struct node** head_ref, thread_t *t) 
 { 
