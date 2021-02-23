@@ -368,7 +368,8 @@ void np_prio_sysready()
   {
     running_thread = head->thread;
     sim_dispatch(running_thread);
-    pop(&head);
+    if(head != NULL)
+      pop(&head);
   }
 }
 
