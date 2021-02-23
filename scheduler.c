@@ -277,9 +277,6 @@ void rr_sys_rd_wr(thread_t *t)
     sim_dispatch(head->thread);
     running_thread = head->thread;
   }
-  
-  
-  
 }
 
 //SYSEXIT implementation for ROUND ROBIN
@@ -376,6 +373,14 @@ void np_prio_sysexec(thread_t *t)
 {  
   append(&thread_list, t);
   sortedInsert(&head, t);
+
+  struct node *temp;
+  temp = thread_list;
+  while(temp->thread->tid != t->tid)
+  {
+    temp = temp->next;
+  }
+  temp->arrival = sim_time();
 }
 
 void np_prio_sys_rd_wr(thread_t *t)
@@ -386,6 +391,14 @@ void np_prio_sys_rd_wr(thread_t *t)
 void np_prio_sysexit(thread_t *t)
 {
   running_thread = NULL;
+
+  struct node *temp;
+  temp = thread_list;
+  while(temp->thread->tid != t->tid)
+  {
+    temp = temp->next;
+  }
+  temp->completion = sim_time();
 }
 
 void np_prio_iocomplete(thread_t *t)
