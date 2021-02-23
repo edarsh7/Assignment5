@@ -29,6 +29,7 @@ enum algorithm algo_number;
 //global thread variable to hold the running thread
 thread_t * running_thread = NULL;
 thread_t * io_thread = NULL;
+thread_t * td_off_cpu = NULL;
 
 //global head variable to hold ready queue
 struct node *head = NULL;
@@ -496,17 +497,14 @@ void np_prio_iostarting(thread_t *t)
 /*= = = = = = = = = = = = = = = = = NP_PRIO FUNCTIONS = = = = = = = = = = = = = = = = =*/
 void prmtv_prio_sysready()
 {
-  struct node *temp;
-  temp = thread_list;
-  while(temp->thread != head->thread)
-  {
-    temp = temp->next;
-  }
-  if(head->thread == temp->thread && temp->done == 1)
-    pop(&head);
 
   if(head != NULL)
   {
+    if(td_off_cpu == head->thread)
+    {
+      pop(&head);
+      td_off_cpu = NULL;
+    }
     thread_t *temp;
     if(running_thread != NULL && running_thread != head->thread)
     {
@@ -527,20 +525,13 @@ void prmtv_prio_sysexec(thread_t *t)
 void prmtv_prio_sys_rd_wr(thread_t *t)
 {
   running_thread = NULL;
+  td_off_cpu = t;
 }
 
 void prmtv_prio_sysexit(thread_t *t)
 {
   running_thread = NULL;
-
-  struct node *temp;
-  temp = thread_list;
-  while(temp->thread->tid != t->tid)
-  {
-    temp = temp->next;
-  }
-  temp->done = 1;
-
+  td_off_cpu = t;
 }
 
 void prmtv_prio_iocomplete(thread_t *t)
