@@ -388,7 +388,7 @@ void rr_iostarting(thread_t *t)
 
 
 /*= = = = = = = = = = = = = = = = = NP_PRIO FUNCTIONS = = = = = = = = = = = = = = = = =*/
-/*
+
 void np_prio_sysready()
 {
 
@@ -488,7 +488,7 @@ void np_prio_iostarting(thread_t *t)
 
   temp->waittime = temp->waittime + (temp->io_start - temp->io_wait - 1);
 }
-*/
+
 /*= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =*/
 
 
