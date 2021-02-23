@@ -70,7 +70,7 @@ void sim_ready()
     case ROUND_ROBIN:
       rr_sysready();
     case NON_PREEMPTIVE_PRIORITY:
-      np_prio_sysready();
+      //np_prio_sysready();
     default:
       break;
   }
@@ -503,6 +503,7 @@ void append(struct node** head_ref, thread_t * t)
   new_node->quantum_ct = q_value;
   new_node->waittime = 0;
   new_node->turnaround = 0;
+
   /* 4. If the Linked List is empty, then make the new
         node as head */
   if (*head_ref == NULL) {
