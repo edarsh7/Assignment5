@@ -135,7 +135,7 @@ void sys_write(thread_t *t)
   }
   else if(algo_number == PREEMPTIVE_PRIORITY)
   {
-    prmtv_prio_sys_rd_wr(t;
+    prmtv_prio_sys_rd_wr(t);
   }
 }
 
