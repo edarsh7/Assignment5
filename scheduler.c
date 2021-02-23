@@ -515,6 +515,17 @@ void prmtv_prio_sysready()
       sim_dispatch(running_thread);
     }
   }
+
+  struct node *temp;
+  temp = thread_list;
+  while(temp != NULL)
+  {
+    if(temp->ready_q == 1 && temp->thread != running_thread && temp->done != 1)
+    {
+      temp->waittime++;
+    }
+    temp = temp->next;
+  }
 }
 
 void prmtv_prio_sysexec(thread_t *t)
