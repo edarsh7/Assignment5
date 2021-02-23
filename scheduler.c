@@ -468,3 +468,19 @@ void turnaround(thread_t *td)
 
   temp->turnaround = temp->completion - temp->arrival + 1;
 }
+
+void pop(struct node** head_ref)
+{
+  struct node *t;
+
+  if(*head_ref == NULL)
+  {
+    return;
+  }
+
+  
+  t = (*head_ref)->next;
+  (*head_ref) = NULL;
+  (*head_ref) = t;
+  
+}
