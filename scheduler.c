@@ -216,6 +216,24 @@ void append(struct node** head_ref, thread_t * t)
 
   return;
 }
+
+
+void pop(struct node** head_ref)
+{
+  struct node *t;
+
+  if(*head_ref == NULL)
+  {
+    return;
+  }
+
+  
+  t = (*head_ref)->next;
+  (*head_ref) = NULL;
+  (*head_ref) = t;
+  
+}
+
 /*= = = = = = = = = = = = = = = = = ROUND ROBIN FUNCTIONS = = = = = = = = = = = = = = = = =*/
 
 void rr_sysready()
@@ -525,19 +543,3 @@ void sortedInsert(struct node** head_ref, thread_t *t)
       temp->next = new_node; 
     } 
 } 
-
-void pop(struct node** head_ref)
-{
-  struct node *t;
-
-  if(*head_ref == NULL)
-  {
-    return;
-  }
-
-  
-  t = (*head_ref)->next;
-  (*head_ref) = NULL;
-  (*head_ref) = t;
-  
-}
