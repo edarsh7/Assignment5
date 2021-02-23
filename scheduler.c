@@ -523,6 +523,7 @@ void prmtv_prio_sys_rd_wr(thread_t *t)
 void prmtv_prio_sysexit(thread_t *t)
 {
   running_thread = NULL;
+  pop(&head);
 }
 
 void prmtv_prio_iocomplete(thread_t *t)
