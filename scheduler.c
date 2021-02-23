@@ -186,7 +186,6 @@ stats_t *stats()
 
 /*= = = = = = = = = = = = = = = = = ROUND ROBIN FUNCTIONS = = = = = = = = = = = = = = = = =*/
 
-// SYSREADY implementation for ROUND ROBIN
 void rr_sysready()
 {
   if(running_thread != NULL && head != NULL)
@@ -217,20 +216,15 @@ void rr_sysready()
   {
     if(temp_n->thread != running_thread && temp_n->done == 0)
     {
-      printf("time: %d  ", sim_time());
-      printf("tid: %d  ", temp_n->thread->tid);
       if(temp_n->ready_q == 1)
       {
-        printf("ready_q +1 ");
         temp_n->waittime++;
       }
     }
-    printf("\n");
     temp_n = temp_n->next;
   }
 }
 
-// SYSEXEC implementation for ROUND ROBIN
 void rr_sysexec(thread_t *t)
 {
   append(&head, t);
@@ -259,7 +253,6 @@ void rr_sysexec(thread_t *t)
   }
 }
 
-// SYSREAD / SYSWRITE implementation for ROUND ROBIN
 void rr_sys_rd_wr(thread_t *t)
 {
   struct node *temp;
@@ -279,7 +272,6 @@ void rr_sys_rd_wr(thread_t *t)
   }
 }
 
-//SYSEXIT implementation for ROUND ROBIN
 void rr_sysexit(thread_t *t)
 {
   struct node *temp;
@@ -304,7 +296,6 @@ void rr_sysexit(thread_t *t)
   }
 }
 
-//IOCOMPLETE implementation for ROUND ROBIN
 void rr_iocomplete(thread_t *t)
 {
   struct node *temp;
@@ -328,7 +319,6 @@ void rr_iocomplete(thread_t *t)
   io_thread = NULL;
 }
 
-//IOSTARTING implementation for IOSTARTING
 void rr_iostarting(thread_t *t)
 {
   struct node *temp;
@@ -544,17 +534,4 @@ void pop(struct node** head_ref)
   (*head_ref) = NULL;
   (*head_ref) = t;
   
-}
-
-void printList()
-{
-  struct node * temp = head;
-
-  printf("list: ");
-  while(temp != NULL)
-  {
-    printf(" %d ", temp->thread->priority);
-    temp=temp->next;
-  }
-  printf("\n");
 }
