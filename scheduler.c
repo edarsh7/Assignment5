@@ -561,7 +561,7 @@ void sortedInsert(struct node** head_ref, thread_t *t)
 
     struct node *temp;
 
-    if (*head_ref == NULL || (*head_ref)->thread->priority >= new_node->thread->priority) 
+    if (*head_ref == NULL || (*head_ref)->thread->priority > new_node->thread->priority) 
     { 
       new_node->next = (*head_ref); 
       (*head_ref) = new_node; 
