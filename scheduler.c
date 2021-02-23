@@ -70,7 +70,7 @@ void sim_ready()
     case ROUND_ROBIN:
       rr_sysready();
     case NON_PREEMPTIVE_PRIORITY:
-      //np_prio_sysready();
+      np_prio_sysready();
     default:
       break;
   }
