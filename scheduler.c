@@ -521,26 +521,68 @@ void prmtv_prio_sysexec(thread_t *t)
 {
   append(&thread_list, t);
   sortedInsert(&head, t);
+
+  struct node *temp;
+  temp = thread_list;
+  while(temp->thread->tid != t->tid)
+  {
+    temp = temp->next;
+  }
+  temp->arrival = sim_time();
+  temp->ready_q = 1;
 }
 
 void prmtv_prio_sys_rd_wr(thread_t *t)
 {
   running_thread = NULL;
+  struct node *temp;
+  temp = thread_list;
+  while(temp->thread->tid != t->tid)
+  {
+    temp = temp->next;
+  }
+  temp->ready_q = 0;
+  temp->io_wait = sim_time();
 }
 
 void prmtv_prio_sysexit(thread_t *t)
 {
   running_thread = NULL;
+
+  struct node *temp;
+  temp = thread_list;
+  while(temp->thread->tid != t->tid)
+  {
+    temp = temp->next;
+  }
+  temp->completion = sim_time();
+  temp->ready_q = 0;
 }
 
 void prmtv_prio_iocomplete(thread_t *t)
 {
   sortedInsert(&head, t);
+  struct node *temp;
+  temp = thread_list;
+  while(temp->thread->tid != t->tid)
+  {
+    temp = temp->next;
+  }
+  temp->ready_q = 1;
 }
 
 void prmtv_prio_iostarting(thread_t *t)
 {
+  struct node *temp;
+  temp = thread_list;
+  while(temp->thread->tid != t->tid)
+  {
+    temp = temp->next;
+  }
+  temp->ready_q = 0;
+  temp->io_start = sim_time();
 
+  temp->waittime = temp->waittime + (temp->io_start - temp->io_wait - 1);
 }
 
 
