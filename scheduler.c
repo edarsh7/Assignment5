@@ -363,19 +363,19 @@ void np_prio_sysready()
 {
 
   struct node *temp;
-  temp = thread_list;
-  while(temp->thread->tid != head->thread->tid)
-  {
-    temp = temp->next;
-  }
-  if(running_thread == NULL)
-    temp->ready_q = 0;
 
   if(running_thread == NULL && head != NULL)
   {
     running_thread = head->thread;
     sim_dispatch(running_thread);
     pop(&head);
+    
+    temp = thread_list;
+    while(temp->thread != running_thread)
+    {
+      temp = temp->next;
+    }
+    temp->ready_q = 0;
   }
 
   temp = thread_list;
