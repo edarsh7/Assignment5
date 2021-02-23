@@ -364,12 +364,11 @@ void rr_iostarting(thread_t *t)
 
 void np_prio_sysready()
 {
-  if(running_thread == NULL)
+  if(running_thread == NULL && head != NULL)
   {
     running_thread = head->thread;
     sim_dispatch(running_thread);
-    if(head != NULL)
-      pop(&head);
+    pop(&head);
   }
 }
 
