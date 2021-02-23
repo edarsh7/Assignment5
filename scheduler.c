@@ -80,9 +80,13 @@ void sim_ready()
   {
     rr_sysready();
   }
-  else if(algo_number == NON_PREEMPTIVE_PRIORITY || algo_number == PREEMPTIVE_PRIORITY)
+  else if(algo_number == NON_PREEMPTIVE_PRIORITY)
   {
     np_prio_sysready();
+  }
+  else if(algo_number == PREEMPTIVE_PRIORITY)
+  {
+    prmtv_prio_sysready();
   }
 }
 
@@ -93,9 +97,13 @@ void sys_exec(thread_t *t)
   {
     rr_sysexec(t);
   }
-  else if(algo_number == NON_PREEMPTIVE_PRIORITY || algo_number == PREEMPTIVE_PRIORITY)
+  else if(algo_number == NON_PREEMPTIVE_PRIORITY)
   {
     np_prio_sysexec(t);
+  }
+  else if(algo_number == PREEMPTIVE_PRIORITY)
+  {
+    prmtv_prio_sysexec(t);
   }
 }
 
@@ -109,6 +117,10 @@ void sys_read(thread_t *t)
   {
     np_prio_sys_rd_wr(t);
   }
+  else if(algo_number == PREEMPTIVE_PRIORITY)
+  {
+    prmtv_prio_sys_rd_wr(t);
+  }
 }
 
 void sys_write(thread_t *t) 
@@ -117,9 +129,13 @@ void sys_write(thread_t *t)
   {
     rr_sys_rd_wr(t);
   }
-  else if(algo_number == NON_PREEMPTIVE_PRIORITY || algo_number == PREEMPTIVE_PRIORITY)
+  else if(algo_number == NON_PREEMPTIVE_PRIORITY)
   {
     np_prio_sys_rd_wr(t);
+  }
+  else if(algo_number == PREEMPTIVE_PRIORITY)
+  {
+    prmtv_prio_sys_rd_wr(t;
   }
 }
 
@@ -129,9 +145,13 @@ void sys_exit(thread_t *t)
   {
     rr_sysexit(t);
   }
-  else if(algo_number == NON_PREEMPTIVE_PRIORITY || algo_number == PREEMPTIVE_PRIORITY)
+  else if(algo_number == NON_PREEMPTIVE_PRIORITY)
   {
     np_prio_sysexit(t);
+  }
+  else if(algo_number == PREEMPTIVE_PRIORITY)
+  {
+    prmtv_prio_sysexit(t);
   }
 }
 
@@ -141,9 +161,13 @@ void io_complete(thread_t *t)
   {
     rr_iocomplete(t);
   }
-  else if(algo_number == NON_PREEMPTIVE_PRIORITY || algo_number == PREEMPTIVE_PRIORITY)
+  else if(algo_number == NON_PREEMPTIVE_PRIORITY)
   {
     np_prio_iocomplete(t);
+  }
+  else if(algo_number == PREEMPTIVE_PRIORITY)
+  {
+    prmtv_prio_iocomplete(t);
   }
 }
 
@@ -153,9 +177,13 @@ void io_starting(thread_t *t)
   {
     rr_iostarting(t);
   }
-  else if(algo_number == NON_PREEMPTIVE_PRIORITY  || algo_number == PREEMPTIVE_PRIORITY)
+  else if(algo_number == NON_PREEMPTIVE_PRIORITY)
   {
     np_prio_iostarting(t);
+  }
+  else if(algo_number == PREEMPTIVE_PRIORITY)
+  {
+    prmtv_prio_iostarting(t);
   }
 }
 
@@ -192,6 +220,8 @@ stats_t *stats()
 
   return stats;
 }
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 /*= = = = = = = = = = = = = = = = = ROUND ROBIN FUNCTIONS = = = = = = = = = = = = = = = = =*/
 
@@ -359,7 +389,6 @@ void rr_iostarting(thread_t *t)
 }
 /*= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =*/
 
-
 /*= = = = = = = = = = = = = = = = = NP_PRIO FUNCTIONS = = = = = = = = = = = = = = = = =*/
 
 void np_prio_sysready()
@@ -371,8 +400,7 @@ void np_prio_sysready()
   {
     running_thread = head->thread;
     sim_dispatch(running_thread);
-    if(algo_number == NON_PREEMPTIVE_PRIORITY)
-      pop(&head);
+    pop(&head);
     
     temp = thread_list;
     while(temp->thread != running_thread)
@@ -466,12 +494,46 @@ void np_prio_iostarting(thread_t *t)
 /*= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =*/
 
 /*= = = = = = = = = = = = = = = = = NP_PRIO FUNCTIONS = = = = = = = = = = = = = = = = =*/
-void prmtv_prio_sysready(){}
-void prmtv_prio_sysexec(thread_t *t){}
-void prmtv_prio_sys_rd_wr(thread_t *t){}
-void prmtv_prio_sysexit(thread_t *t){}
-void prmtv_prio_iocomplete(thread_t *t){}
-void prmtv_prio_iostarting(thread_t *t){}
+void prmtv_prio_sysready()
+{
+  if(head != NULL)
+  {
+    thread_t *temp;
+    if(running_thread != NULL && running_thread != head->thread)
+    {
+      temp = running_thread;
+      sortedInsert(&head, temp);
+    }
+    sim_dispatch(head->thread);
+    running_thread = head->thread;
+  }
+}
+
+void prmtv_prio_sysexec(thread_t *t)
+{
+  append(&thread_list, t);
+  sortedInsert(&head, t);
+}
+
+void prmtv_prio_sys_rd_wr(thread_t *t)
+{
+  running_thread = NULL;
+}
+
+void prmtv_prio_sysexit(thread_t *t)
+{
+  running_thread = NULL;
+}
+
+void prmtv_prio_iocomplete(thread_t *t)
+{
+  sortedInsert(&head, t);
+}
+
+void prmtv_prio_iostarting(thread_t *t)
+{
+
+}
 
 
 /*= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =*/
