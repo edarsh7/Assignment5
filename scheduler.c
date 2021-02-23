@@ -469,6 +469,33 @@ void turnaround(thread_t *td)
   temp->turnaround = temp->completion - temp->arrival + 1;
 }
 
+void sortedInsert(struct node** head_ref, thread_t *t) 
+{ 
+    struct node* new_node = (struct node*)malloc(sizeof(struct node));
+    new_node->next = NULL;
+    new_node->thread = t;
+
+    struct node *temp;
+
+    if (*head_ref == NULL || (*head_ref)->thread->priority > new_node->thread->priority) 
+    { 
+      new_node->next = (*head_ref); 
+      (*head_ref) = new_node; 
+    } 
+    else
+    { 
+      temp = (*head_ref); 
+      while (temp->next != NULL && temp->next->thread->priority <= new_node->thread->priority) 
+      { 
+        temp = temp->next; 
+      } 
+      new_node->next = temp->next; 
+      temp->next = new_node; 
+    } 
+} 
+
+
+
 void pop(struct node** head_ref)
 {
   struct node *t;
