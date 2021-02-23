@@ -367,6 +367,18 @@ void np_prio_sysready()
     sim_dispatch(running_thread);
     pop(&head);
   }
+
+  struct node *temp;
+  temp = thread_list;
+  while(temp->thread->tid != NULL)
+  {
+    if(temp->ready_q = 1 && temp->thread != running_thread)
+    {
+      temp->waittime++;
+    }
+    temp = temp->next;
+  }
+  
 }
 
 void np_prio_sysexec(thread_t *t)
@@ -386,6 +398,14 @@ void np_prio_sysexec(thread_t *t)
 void np_prio_sys_rd_wr(thread_t *t)
 {
   running_thread = NULL;
+  struct node *temp;
+  temp = thread_list;
+  while(temp->thread->tid != t->tid)
+  {
+    temp = temp->next;
+  }
+  temp->ready_q = 0;
+  temp->io_wait = sim_time();
 }
 
 void np_prio_sysexit(thread_t *t)
@@ -399,16 +419,34 @@ void np_prio_sysexit(thread_t *t)
     temp = temp->next;
   }
   temp->completion = sim_time();
+  temp->ready_q = 0;
+
 }
 
 void np_prio_iocomplete(thread_t *t)
 {
   sortedInsert(&head, t);
+  struct node *temp;
+  temp = thread_list;
+  while(temp->thread->tid != t->tid)
+  {
+    temp = temp->next;
+  }
+  temp->ready_q = 1;
 }
 
 void np_prio_iostarting(thread_t *t)
 {
-  
+  struct node *temp;
+  temp = thread_list;
+  while(temp->thread->tid != t->tid)
+  {
+    temp = temp->next;
+  }
+  temp->ready_q = 0;
+  temp->io_start = sim_time();
+
+  temp->waittime = temp->waittime + (temp->io_start - temp->io_wait - 1);
 }
 /*= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =*/
 
