@@ -468,21 +468,3 @@ void turnaround(thread_t *td)
 
   temp->turnaround = temp->completion - temp->arrival + 1;
 }
-
-void update()
-{
-  printf(" z ");
-  struct node *temp_n;
-  temp_n = thread_list;
-  while(temp_n != NULL)
-  {
-    if(temp_n->thread != running_thread)
-    {
-      if(temp_n->ready_q == 1)
-        temp_n->waittime++;
-      if(temp_n->io_q == 1)
-        temp_n->waittime++;
-    }
-    temp_n = temp_n->next;
-  }
-}
