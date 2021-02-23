@@ -194,6 +194,7 @@ void rr_sysready()
   { 
     if(head->quantum_ct == 0)
     {
+      printf("yes");
       struct node *temp_x;
       temp_x = thread_list;
       while(temp_x->thread->tid != head->thread->tid)
@@ -526,8 +527,6 @@ void sortedInsert(struct node** head_ref, thread_t *t)
       temp->next = new_node; 
     } 
 } 
-
-
 
 void pop(struct node** head_ref)
 {
