@@ -539,7 +539,7 @@ void prmtv_prio_sysexit(thread_t *t)
 
 void prmtv_prio_iocomplete(thread_t *t)
 {
-
+  sortedInsert(&head, t);
 }
 
 void prmtv_prio_iostarting(thread_t *t)
