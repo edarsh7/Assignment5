@@ -37,6 +37,7 @@ struct node *thread_list = NULL;
 
 //borrowed list functions ::: CREDITS GIVEN IN COMMENTS BEFORE IMPLEMENTATION
 void sortedInsert(struct node** head_ref, thread_t *t);
+void sortedInsert_pre(struct node** head_ref, thread_t *t);
 void append(struct node** head_ref, thread_t * t);
 void pop(struct node** head_ref);
 
@@ -500,8 +501,15 @@ void prmtv_prio_sysready()
 
   if(head != NULL)
   {
+    if(running_thread != NULL && running_thread->priority > head->thread->priority)
+    {
+      thread_t *temp = running_thread;
+      running_thread = NULL;
+      
+    }
     sim_dispatch(head->thread);
     running_thread = head->thread;
+    pop(&head);
   }
 }
 
@@ -514,20 +522,16 @@ void prmtv_prio_sysexec(thread_t *t)
 void prmtv_prio_sys_rd_wr(thread_t *t)
 {
   running_thread = NULL;
-  if(head->thread == t)
-    pop(&head);
 }
 
 void prmtv_prio_sysexit(thread_t *t)
 {
   running_thread = NULL;
-  if(head->thread == t)
-    pop(&head);
 }
 
 void prmtv_prio_iocomplete(thread_t *t)
 {
-  sortedInsert(&head, t);
+
 }
 
 void prmtv_prio_iostarting(thread_t *t)
@@ -631,4 +635,27 @@ void pop(struct node** head_ref)
 }
 
 
+void sortedInsert_pre(struct node** head_ref, thread_t *t) 
+{ 
+    struct node* new_node = (struct node*)malloc(sizeof(struct node));
+    new_node->next = NULL;
+    new_node->thread = t;
 
+    struct node *temp;
+
+    if (*head_ref == NULL || (*head_ref)->thread->priority > new_node->thread->priority) 
+    { 
+      new_node->next = (*head_ref); 
+      (*head_ref) = new_node; 
+    } 
+    else
+    { 
+      temp = (*head_ref); 
+      while (temp->next != NULL && temp->next->thread->priority <= new_node->thread->priority) 
+      { 
+        temp = temp->next; 
+      } 
+      new_node->next = temp->next; 
+      temp->next = new_node; 
+    } 
+} 
