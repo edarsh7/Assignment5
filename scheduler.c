@@ -372,7 +372,7 @@ void np_prio_sysready()
   temp = thread_list;
   while(temp->thread->tid != NULL)
   {
-    if(temp->ready_q = 1 && temp->thread != running_thread)
+    if(temp->ready_q == 1 && temp->thread != running_thread)
     {
       temp->waittime++;
     }
