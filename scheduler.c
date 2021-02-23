@@ -140,7 +140,6 @@ void io_complete(thread_t *t)
 }
 
 void io_starting(thread_t *t)
-<<<<<<< HEAD
 {
   switch(algo_number){
     case ROUND_ROBIN:
@@ -151,9 +150,6 @@ void io_starting(thread_t *t)
       break;
   }
 }
-=======
-{ update();}
->>>>>>> parent of 1c8fd28... idk
 
 stats_t *stats()
 { 
@@ -194,10 +190,6 @@ stats_t *stats()
 
 void rr_sysready()
 {
-<<<<<<< HEAD
-=======
-  update();
->>>>>>> parent of 1c8fd28... idk
   if(running_thread != NULL && head != NULL)
   { 
     if(head->quantum_ct == 0)
