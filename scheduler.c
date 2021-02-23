@@ -44,6 +44,8 @@ void rr_sysexec(thread_t *t);
 void rr_sys_rd_wr(thread_t *t);
 void rr_sysexit(thread_t *t);
 void rr_iocomplete(thread_t *t);
+//idk
+
 void turnaround(thread_t *td);
 void rr_iostarting(thread_t *t);
 
@@ -138,6 +140,7 @@ void io_complete(thread_t *t)
 }
 
 void io_starting(thread_t *t)
+<<<<<<< HEAD
 {
   switch(algo_number){
     case ROUND_ROBIN:
@@ -148,6 +151,9 @@ void io_starting(thread_t *t)
       break;
   }
 }
+=======
+{ update();}
+>>>>>>> parent of 1c8fd28... idk
 
 stats_t *stats()
 { 
@@ -188,6 +194,10 @@ stats_t *stats()
 
 void rr_sysready()
 {
+<<<<<<< HEAD
+=======
+  update();
+>>>>>>> parent of 1c8fd28... idk
   if(running_thread != NULL && head != NULL)
   { 
     if(head->quantum_ct == 0)
@@ -227,6 +237,7 @@ void rr_sysready()
 
 void rr_sysexec(thread_t *t)
 {
+  update();
   append(&head, t);
   append(&thread_list, t);
 
@@ -255,6 +266,7 @@ void rr_sysexec(thread_t *t)
 
 void rr_sys_rd_wr(thread_t *t)
 {
+  update();
   struct node *temp;
   temp = thread_list;
   while(temp->thread->tid != t->tid)
@@ -274,6 +286,7 @@ void rr_sys_rd_wr(thread_t *t)
 
 void rr_sysexit(thread_t *t)
 {
+  update();
   struct node *temp;
   temp = thread_list;
   while(temp->thread->tid != t->tid)
@@ -298,6 +311,7 @@ void rr_sysexit(thread_t *t)
 
 void rr_iocomplete(thread_t *t)
 {
+  update();
   struct node *temp;
   temp = thread_list;
   while(temp->thread->tid != t->tid)
@@ -463,76 +477,20 @@ void turnaround(thread_t *td)
   temp->turnaround = temp->completion - temp->arrival + 1;
 }
 
-void sortedInsert(struct node** head_ref, thread_t *t) 
-{ 
-    struct node* new_node = (struct node*)malloc(sizeof(struct node));
-    new_node->next = NULL;
-    new_node->thread = t;
-
-    struct node *temp;
-
-    if (*head_ref == NULL || (*head_ref)->thread->priority > new_node->thread->priority) 
-    { 
-      new_node->next = (*head_ref); 
-      (*head_ref) = new_node; 
-    } 
-    else
-    { 
-      temp = (*head_ref); 
-      while (temp->next != NULL && temp->next->thread->priority <= new_node->thread->priority) 
-      { 
-        temp = temp->next; 
-      } 
-      new_node->next = temp->next; 
-      temp->next = new_node; 
-    } 
-} 
-
-void append(struct node** head_ref, thread_t * t)
+void update()
 {
-  /* 1. allocate node */
-  struct node* new_node
-      = (struct node*)malloc(sizeof(struct node));
-
-  struct node* last = *head_ref; /* used in step 5*/
-
-  /* 3. This new node is going to be the last node, so
-        make next of it as NULL*/
-  new_node->next = NULL;
-  new_node->thread = t;
-  new_node->quantum_ct = q_value;
-  new_node->waittime = 0;
-  new_node->turnaround = 0;
-
-  /* 4. If the Linked List is empty, then make the new
-        node as head */
-  if (*head_ref == NULL) {
-      *head_ref = new_node;
-      return;
-  }
-
-  /* 5. Else traverse till the last node */
-  while (last->next != NULL)
-      last = last->next;
-
-  /* 6. Change the next of last node */
-  last->next = new_node;
-
-  return;
-}
-
-void pop(struct node** head_ref)
-{
-  struct node *t;
-
-  if(*head_ref == NULL)
+  printf(" z ");
+  struct node *temp_n;
+  temp_n = thread_list;
+  while(temp_n != NULL)
   {
-    return;
+    if(temp_n->thread != running_thread)
+    {
+      if(temp_n->ready_q == 1)
+        temp_n->waittime++;
+      if(temp_n->io_q == 1)
+        temp_n->waittime++;
+    }
+    temp_n = temp_n->next;
   }
-
-  
-  t = (*head_ref)->next;
-  (*head_ref) = NULL;
-  (*head_ref) = t;
-  
 }
