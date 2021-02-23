@@ -229,7 +229,7 @@ void rr_sysready()
 
 void rr_sysexec(thread_t *t)
 {
-  update();
+
   append(&head, t);
   append(&thread_list, t);
 
