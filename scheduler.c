@@ -498,19 +498,8 @@ void np_prio_iostarting(thread_t *t)
 void prmtv_prio_sysready()
 {
 
-  if(head != NULL && td_off_cpu == head->thread)
-  {
-    pop(&head);
-    td_off_cpu = NULL;
-  }
   if(head != NULL)
   {
-    thread_t *temp;
-    if(running_thread != NULL && running_thread != head->thread)
-    {
-      temp = running_thread;
-      sortedInsert(&head, temp);
-    }
     sim_dispatch(head->thread);
     running_thread = head->thread;
   }
@@ -525,13 +514,15 @@ void prmtv_prio_sysexec(thread_t *t)
 void prmtv_prio_sys_rd_wr(thread_t *t)
 {
   running_thread = NULL;
-  td_off_cpu = t;
+  if(head->thread == t)
+    pop(&head);
 }
 
 void prmtv_prio_sysexit(thread_t *t)
 {
   running_thread = NULL;
-  td_off_cpu = t;
+  if(head->thread == t)
+    pop(&head);
 }
 
 void prmtv_prio_iocomplete(thread_t *t)
