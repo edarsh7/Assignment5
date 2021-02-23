@@ -70,8 +70,6 @@ void sim_ready()
   switch(algo_number){
     case ROUND_ROBIN:
       rr_sysready();
-    case NON_PREEMPTIVE_PRIORITY:
-      np_prio_sysready();
     default:
       break;
   }
@@ -83,8 +81,6 @@ void sys_exec(thread_t *t)
   switch(algo_number){
     case ROUND_ROBIN:
       rr_sysexec(t);
-    case NON_PREEMPTIVE_PRIORITY:
-      np_prio_sysexec(t);
     default:
       break;
   }
@@ -95,8 +91,6 @@ void sys_read(thread_t *t)
   switch(algo_number){
     case ROUND_ROBIN:
       rr_sys_rd_wr(t);
-    case NON_PREEMPTIVE_PRIORITY:
-      np_prio_sys_rd_wr(t);
     default:
       break;
   }
@@ -107,8 +101,6 @@ void sys_write(thread_t *t)
   switch(algo_number){
     case ROUND_ROBIN:
       rr_sys_rd_wr(t);
-    case NON_PREEMPTIVE_PRIORITY:
-      np_prio_sys_rd_wr(t);
     default:
       break;
   }
@@ -119,8 +111,6 @@ void sys_exit(thread_t *t)
   switch(algo_number){
     case ROUND_ROBIN:
       rr_sysexit(t);
-    case NON_PREEMPTIVE_PRIORITY:
-      np_prio_sysexit(t);
     default:
       break;
   }
@@ -131,8 +121,6 @@ void io_complete(thread_t *t)
   switch(algo_number){
     case ROUND_ROBIN:
       rr_iocomplete(t);
-    case NON_PREEMPTIVE_PRIORITY:
-      np_prio_iocomplete(t);
     default:
       break;
   }
@@ -143,8 +131,6 @@ void io_starting(thread_t *t)
   switch(algo_number){
     case ROUND_ROBIN:
       rr_iostarting(t);
-    case NON_PREEMPTIVE_PRIORITY:
-      np_prio_iostarting(t);
     default:
       break;
   }
