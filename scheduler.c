@@ -498,13 +498,13 @@ void np_prio_iostarting(thread_t *t)
 void prmtv_prio_sysready()
 {
 
+  if(td_off_cpu == head->thread && head->next != NULL)
+  {
+    pop(&head);
+    td_off_cpu = NULL;
+  }
   if(head != NULL)
   {
-    if(td_off_cpu == head->thread && head->next != NULL)
-    {
-      pop(&head);
-      td_off_cpu = NULL;
-    }
     thread_t *temp;
     if(running_thread != NULL && running_thread != head->thread)
     {
