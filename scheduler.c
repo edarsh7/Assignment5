@@ -501,22 +501,18 @@ void prmtv_prio_sysready()
 
   if(head != NULL)
   {
-    if(running_thread != NULL && head->thread->priority > running_thread->priority)
+    if(running_thread == NULL)
     {
-      thread_t *temp = running_thread;
-      sortedInsert(&head, temp);
       running_thread = head->thread;
       pop(&head);
       sim_dispatch(running_thread);
     }
-    else
+    else if(running_thread->priority > head->thread->priority)
     {
-      if(running_thread == NULL && head != NULL)
-      {
-        running_thread = head->thread;
-        pop(&head);
-        sim_dispatch(running_thread);
-      }
+      sortedInsert(&head, running_thread);
+      running_thread = head->thread;
+      pop(&head);
+      sim_dispatch(running_thread);
     }
   }
 }
